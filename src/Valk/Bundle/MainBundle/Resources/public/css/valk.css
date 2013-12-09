@@ -1,0 +1,25 @@
+.browse-template .main-page-content  {
+    padding-top: 250px;
+}
+
+.game-types li {
+    height: 50px;
+}
+
+.game-types .glyphicon {
+    margin-right: 10px;
+}
+
+.home-new-icon {
+    margin: 1px 7px 0 5px;
+}
+
+.region-status span {
+    display: inline-block;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.region-status span.online-players {
+    color: #75e900;
+}

@@ -1,0 +1,808 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="Keywords"
+          content="WoW, World of Warcraft, WoW Provider, WoWProvider, WoW Class talents, Talente, Talents, Talent Calculator, Talent Rechner"/>
+    <meta name="description" content="World of Warcraft Resource - Uptodate Talent Calculator in every language"/>
+
+    <title>
+        Warrior (1.12.2.6005) Talent Calculator
+    </title>
+
+    {% stylesheets '@ValkTalentCalculatorBundle/Resources/public/css/*'  filter='cssrewrite' %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+
+    {% javascripts '@ValkTalentCalculatorBundle/Resources/public/js/*' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    <script src="{{ asset('bundles/valktalentcalculator/js/classes/' ~ className ~ '.js') }}"></script>
+
+    <script type="text/javascript">
+        var rootUrl = "{{ url('valk_talent_calculator') }}";
+        var pointlock = 51;
+        var treeType = "normal";
+        var classString = "{{ classId }}";
+        var className = "{{ className|lower }}";
+        var buildVersionString = "11226005";
+        var fillOutString = "{{ build }}";
+        var talentPointsRequired = "5";
+        var layoutSwitch = "&layout=slim";
+        var BLANK_IMAGE = "{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}";
+    </script>
+
+</head>
+<body>
+
+<div class="contentarea" id="contentarea">
+
+
+<div class="calculator initial" id="calculator">
+
+<div class="selector icon-selector" id="calculator-selector">
+    <a {% if className|lower == "warrior" %}class="tab-active"{% endif %} href="{{ path('valk_talent_calculator_with_class', {'class': 'warrior'}) }}" id="class-1" data-tooltip="#tooltip-class-1" data-tooltip-options='{"location":"topCenter"}'
+       data-id="1">
+<span class="icon-frame frame-56 "
+      style='background-image: url("http://media.blizzard.com/wow/icons/56/class_warrior.jpg");'>
+<span class="glare"></span>
+</span>
+    </a>
+<span class="hide" id="tooltip-class-1">
+<span class="color-c1">Воин</span>
+</span>
+    <a {% if className|lower == "druid" %}class="tab-active"{% endif %} href="{{ path('valk_talent_calculator_with_class', {'class': 'druid'}) }}" id="class-11" data-tooltip="#tooltip-class-11" data-tooltip-options='{"location":"topCenter"}'
+       data-id="11">
+<span class="icon-frame frame-56 "
+      style='background-image: url("http://media.blizzard.com/wow/icons/56/class_druid.jpg");'>
+<span class="glare"></span>
+</span>
+    </a>
+<span class="hide" id="tooltip-class-11">
+<span class="color-c11">Друид</span>
+</span>
+    <a {% if className|lower == "priest" %}class="tab-active"{% endif %} href="{{ path('valk_talent_calculator_with_class', {'class': 'priest'}) }}" id="class-5" data-tooltip="#tooltip-class-5" data-tooltip-options='{"location":"topCenter"}'
+       data-id="5">
+
+<span class="icon-frame frame-56 "
+      style='background-image: url("http://media.blizzard.com/wow/icons/56/class_priest.jpg");'>
+<span class="glare"></span>
+</span>
+    </a>
+<span class="hide" id="tooltip-class-5">
+<span class="color-c5">Жрец</span>
+</span>
+    <a {% if className|lower == "mage" %}class="tab-active"{% endif %} href="{{ path('valk_talent_calculator_with_class', {'class': 'mage'}) }}" id="class-8" data-tooltip="#tooltip-class-8" data-tooltip-options='{"location":"topCenter"}'
+       data-id="8">
+<span class="icon-frame frame-56 "
+      style='background-image: url("http://media.blizzard.com/wow/icons/56/class_mage.jpg");'>
+<span class="glare"></span>
+</span>
+    </a>
+<span class="hide" id="tooltip-class-8">
+<span class="color-c8">Маг</span>
+</span>
+
+    <a {% if className|lower == "hunter" %}class="tab-active"{% endif %} href="{{ path('valk_talent_calculator_with_class', {'class': 'hunter'}) }}" id="class-3" data-tooltip="#tooltip-class-3" data-tooltip-options='{"location":"topCenter"}'
+       data-id="3">
+
+<span class="icon-frame frame-56 "
+      style='background-image: url("http://media.blizzard.com/wow/icons/56/class_hunter.jpg");'>
+<span class="glare"></span>
+</span>
+    </a>
+
+<span class="hide" id="tooltip-class-3">
+<span class="color-c3">Охотник</span>
+</span>
+    <a {% if className|lower == "paladin" %}class="tab-active"{% endif %} href="{{ path('valk_talent_calculator_with_class', {'class': 'paladin'}) }}" id="class-2" data-tooltip="#tooltip-class-2" data-tooltip-options='{"location":"topCenter"}'
+       data-id="2">
+
+<span class="icon-frame frame-56 "
+      style='background-image: url("http://media.blizzard.com/wow/icons/56/class_paladin.jpg");'>
+<span class="glare"></span>
+</span>
+    </a>
+
+<span class="hide" id="tooltip-class-2">
+<span class="color-c2">Паладин</span>
+</span>
+    <a {% if className|lower == "rogue" %}class="tab-active"{% endif %} href="{{ path('valk_talent_calculator_with_class', {'class': 'rogue'}) }}" id="class-4" data-tooltip="#tooltip-class-4" data-tooltip-options='{"location":"topCenter"}'
+       data-id="4">
+
+<span class="icon-frame frame-56 "
+      style='background-image: url("http://media.blizzard.com/wow/icons/56/class_rogue.jpg");'>
+<span class="glare"></span>
+</span>
+    </a>
+
+<span class="hide" id="tooltip-class-4">
+<span class="color-c4">Разбойник</span>
+</span>
+
+    <a {% if className|lower == "warlock" %}class="tab-active"{% endif %} href="{{ path('valk_talent_calculator_with_class', {'class': 'warlock'}) }}" id="class-9" data-tooltip="#tooltip-class-9" data-tooltip-options='{"location":"topCenter"}'
+       data-id="9">
+
+<span class="icon-frame frame-56 "
+      style='background-image: url("http://media.blizzard.com/wow/icons/56/class_warlock.jpg");'>
+<span class="glare"></span>
+</span>
+    </a>
+
+<span class="hide" id="tooltip-class-9">
+<span class="color-c9">Чернокнижник</span>
+</span>
+    <a {% if className|lower == "shaman" %}class="tab-active"{% endif %} href="{{ path('valk_talent_calculator_with_class', {'class': 'shaman'}) }}" id="class-7" data-tooltip="#tooltip-class-7" data-tooltip-options='{"location":"topCenter"}'
+       data-id="7">
+
+
+<span class="icon-frame frame-56 "
+      style='background-image: url("http://media.blizzard.com/wow/icons/56/class_shaman.jpg");'>
+<span class="glare"></span>
+</span>
+    </a>
+
+<span class="hide" id="tooltip-class-7">
+<span class="color-c7">Шаман</span>
+</span>
+</div>
+
+
+
+</div>
+
+
+<div style="background-image:url({{ asset('bundles/valktalentcalculator/images/talent/header.png') }}); width:1082px; height:50px;">
+    <table border="0" cellpadding="0" cellspacing="0" style="height:50px;">
+        <tr>
+            <td style="width:3px;"></td>
+            <td style="width:43px;" valign="middle"><img
+                        src="{{ asset('bundles/valktalentcalculator/images/talent/' ~ className ~ '.png') }}" border="0"
+                        width="43" height="43"
+                        alt="{{ className }}"/></td>
+            <td style="width:3px;"></td>
+            <td style="width:250px;"><span class="class{{ className }}">{{ className }}</span><br/><span
+                        class="buildText">1.12.2.6005</span></td>
+            <td>
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td><span class="textLabel" id="linkThisBuild">Link this build: </span></td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input id="buildText" onfocus="javascript:selectBuildText();" type="text"
+                                               style="width:770px;"/></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="talentcontainer">
+<div class="cb">
+<table width="1082" border="0" cellspacing="0" cellpadding="0" align="left">
+<tr>
+<td width="300" height="480" valign="top"
+    style="background-image: url({{ asset('bundles/valktalentcalculator/images/talent/sidebar.jpg') }}); background-repeat:no-repeat; background-color:#000000;">
+    <table border="0" cellpadding="10" cellspacing="2" width="100%">
+        <tr>
+            <td>
+                <br/>
+
+                <div id="viewright">
+                    <img src="{{ asset('bundles/valktalentcalculator/images/talent/point.gif') }}" border="0"
+                         alt=""/><span class="textLabel" id="lblPointsLeft">Points left: </span><span
+                            id="pointsleft" class="textLabelYellow">0</span><br/>
+                    <img src="{{ asset('bundles/valktalentcalculator/images/talent/point.gif') }}" border="0"
+                         alt=""/><span class="textLabel" id="lblPointsUsed">Points spent: </span><span
+                            id="pointsused" class="textLabelYellow">0</span><br/>
+                    <img src="{{ asset('bundles/valktalentcalculator/images/talent/point.gif') }}" border="0"
+                         alt=""/><span class="textLabel" id="lblRequiredLevel">Required level: </span><span
+                            id="levelneeded" class="textLabelYellow">-</span><br/>
+
+                    <br/>
+
+                </div>
+
+            </td>
+        </tr>
+    </table>
+</td>
+<td valign="top">
+
+<table width="900" border="0" cellspacing="0" cellpadding="0" align="left">
+<tr>
+    <td width="300" class="talentheader">
+        <div id="treeheader1"><strong id="treeheadertext1">Loading...</strong></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" id="treeheaderimg1"
+             onmouseover="javascript:resetHoverOn('treeheaderimg1');"
+             onmouseout="javascript:resetHoverOff('treeheaderimg1');" width="59" height="20" alt="Reset this tree"/>
+    </td>
+    <td width="300" class="talentheader">
+        <div id="treeheader2"><strong id="treeheadertext2"></strong></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" id="treeheaderimg2"
+             onmouseover="javascript:resetHoverOn('treeheaderimg2');"
+             onmouseout="javascript:resetHoverOff('treeheaderimg2');" width="59" height="20" alt="Reset this tree"/>
+    </td>
+    <td width="300" class="talentheader">
+        <div id="treeheader3"><strong id="treeheadertext3"></strong></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" id="treeheaderimg3"
+             onmouseover="javascript:resetHoverOn('treeheaderimg3');"
+             onmouseout="javascript:resetHoverOff('treeheaderimg3');" width="59" height="20" alt="Reset this tree"/>
+    </td>
+</tr>
+<tr>
+<td class="outerbg" id="tree1" width="300" height="480" valign="top"
+    style="background-image: url({{ asset('bundles/valktalentcalculator/images/talent/loading.png') }}); background-repeat:no-repeat; background-color:#000000">
+    <div class="button" id="t1r1p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r1p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r1p1i"/></div>
+    <div class="button" id="t1r1p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r1p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r1p2i"/></div>
+    <div class="button" id="t1r1p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r1p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r1p3i"/></div>
+    <div class="button" id="t1r1p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r1p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r1p4i"/></div>
+    <div class="button" id="t1r2p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r2p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r2p1i"/></div>
+    <div class="button" id="t1r2p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r2p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r2p2i"/></div>
+    <div class="button" id="t1r2p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r2p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r2p3i"/></div>
+    <div class="button" id="t1r2p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r2p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r2p4i"/></div>
+    <div class="button" id="t1r3p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r3p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r3p1i"/></div>
+    <div class="button" id="t1r3p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r3p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r3p2i"/></div>
+    <div class="button" id="t1r3p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r3p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r3p3i"/></div>
+    <div class="button" id="t1r3p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r3p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r3p4i"/></div>
+    <div class="button" id="t1r4p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r4p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r4p1i"/></div>
+    <div class="button" id="t1r4p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r4p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r4p2i"/></div>
+    <div class="button" id="t1r4p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r4p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r4p3i"/></div>
+    <div class="button" id="t1r4p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r4p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r4p4i"/></div>
+    <div class="button" id="t1r5p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r5p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r5p1i"/></div>
+    <div class="button" id="t1r5p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r5p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r5p2i"/></div>
+    <div class="button" id="t1r5p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r5p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r5p3i"/></div>
+    <div class="button" id="t1r5p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r5p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r5p4i"/></div>
+    <div class="button" id="t1r6p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r6p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r6p1i"/></div>
+    <div class="button" id="t1r6p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r6p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r6p2i"/></div>
+    <div class="button" id="t1r6p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r6p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r6p3i"/></div>
+    <div class="button" id="t1r6p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r6p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r6p4i"/></div>
+    <div class="button" id="t1r7p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r7p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r7p1i"/></div>
+    <div class="button" id="t1r7p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r7p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r7p2i"/></div>
+    <div class="button" id="t1r7p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r7p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r7p3i"/></div>
+    <div class="button" id="t1r7p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r7p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r7p4i"/></div>
+    <div class="button" id="t1r8p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r8p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r8p1i"/></div>
+    <div class="button" id="t1r8p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r8p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r8p2i"/></div>
+    <div class="button" id="t1r8p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r8p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r8p3i"/></div>
+    <div class="button" id="t1r8p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r8p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r8p4i"/></div>
+    <div class="button" id="t1r9p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r9p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r9p1i"/></div>
+    <div class="button" id="t1r9p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r9p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r9p2i"/></div>
+    <div class="button" id="t1r9p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r9p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r9p3i"/></div>
+    <div class="button" id="t1r9p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r9p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r9p4i"/></div>
+    <div class="button" id="t1r10p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r10p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r10p1i"/></div>
+    <div class="button" id="t1r10p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r10p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r10p2i"/></div>
+    <div class="button" id="t1r10p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r10p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r10p3i"/></div>
+    <div class="button" id="t1r10p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r10p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r10p4i"/></div>
+    <div class="button" id="t1r11p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r11p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r11p1i"/></div>
+    <div class="button" id="t1r11p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r11p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r11p2i"/></div>
+    <div class="button" id="t1r11p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r11p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r11p3i"/></div>
+    <div class="button" id="t1r11p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t1r11p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t1r11p4i"/></div>
+</td>
+<td class="outerbg" id="tree2" width="300" height="480" valign="top"
+    style="background-image: none;background-color:#000000;">
+    <div class="button" id="t2r1p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r1p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r1p1i"/></div>
+    <div class="button" id="t2r1p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r1p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r1p2i"/></div>
+    <div class="button" id="t2r1p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r1p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r1p3i"/></div>
+    <div class="button" id="t2r1p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r1p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r1p4i"/></div>
+    <div class="button" id="t2r2p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r2p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r2p1i"/></div>
+    <div class="button" id="t2r2p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r2p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r2p2i"/></div>
+    <div class="button" id="t2r2p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r2p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r2p3i"/></div>
+    <div class="button" id="t2r2p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r2p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r2p4i"/></div>
+    <div class="button" id="t2r3p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r3p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r3p1i"/></div>
+    <div class="button" id="t2r3p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r3p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r3p2i"/></div>
+    <div class="button" id="t2r3p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r3p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r3p3i"/></div>
+    <div class="button" id="t2r3p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r3p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r3p4i"/></div>
+    <div class="button" id="t2r4p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r4p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r4p1i"/></div>
+    <div class="button" id="t2r4p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r4p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r4p2i"/></div>
+    <div class="button" id="t2r4p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r4p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r4p3i"/></div>
+    <div class="button" id="t2r4p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r4p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r4p4i"/></div>
+    <div class="button" id="t2r5p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r5p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r5p1i"/></div>
+    <div class="button" id="t2r5p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r5p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r5p2i"/></div>
+    <div class="button" id="t2r5p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r5p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r5p3i"/></div>
+    <div class="button" id="t2r5p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r5p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r5p4i"/></div>
+    <div class="button" id="t2r6p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r6p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r6p1i"/></div>
+    <div class="button" id="t2r6p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r6p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r6p2i"/></div>
+    <div class="button" id="t2r6p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r6p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r6p3i"/></div>
+    <div class="button" id="t2r6p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r6p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r6p4i"/></div>
+    <div class="button" id="t2r7p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r7p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r7p1i"/></div>
+    <div class="button" id="t2r7p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r7p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r7p2i"/></div>
+    <div class="button" id="t2r7p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r7p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r7p3i"/></div>
+    <div class="button" id="t2r7p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r7p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r7p4i"/></div>
+    <div class="button" id="t2r8p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r8p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r8p1i"/></div>
+    <div class="button" id="t2r8p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r8p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r8p2i"/></div>
+    <div class="button" id="t2r8p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r8p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r8p3i"/></div>
+    <div class="button" id="t2r8p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r8p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r8p4i"/></div>
+    <div class="button" id="t2r9p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r9p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r9p1i"/></div>
+    <div class="button" id="t2r9p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r9p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r9p2i"/></div>
+    <div class="button" id="t2r9p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r9p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r9p3i"/></div>
+    <div class="button" id="t2r9p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r9p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r9p4i"/></div>
+    <div class="button" id="t2r10p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r10p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r10p1i"/></div>
+    <div class="button" id="t2r10p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r10p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r10p2i"/></div>
+    <div class="button" id="t2r10p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r10p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r10p3i"/></div>
+    <div class="button" id="t2r10p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r10p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r10p4i"/></div>
+    <div class="button" id="t2r11p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r11p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r11p1i"/></div>
+    <div class="button" id="t2r11p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r11p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r11p2i"/></div>
+    <div class="button" id="t2r11p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r11p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r11p3i"/></div>
+    <div class="button" id="t2r11p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t2r11p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t2r11p4i"/></div>
+</td>
+<td class="outerbg" id="tree3" width="300" height="480" valign="top"
+    style="background-image: none;background-color:#000000;">
+    <div class="button" id="t3r1p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r1p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r1p1i"/></div>
+    <div class="button" id="t3r1p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r1p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r1p2i"/></div>
+    <div class="button" id="t3r1p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r1p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r1p3i"/></div>
+    <div class="button" id="t3r1p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r1p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r1p4i"/></div>
+    <div class="button" id="t3r2p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r2p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r2p1i"/></div>
+    <div class="button" id="t3r2p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r2p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r2p2i"/></div>
+    <div class="button" id="t3r2p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r2p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r2p3i"/></div>
+    <div class="button" id="t3r2p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r2p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r2p4i"/></div>
+    <div class="button" id="t3r3p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r3p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r3p1i"/></div>
+    <div class="button" id="t3r3p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r3p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r3p2i"/></div>
+    <div class="button" id="t3r3p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r3p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r3p3i"/></div>
+    <div class="button" id="t3r3p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r3p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r3p4i"/></div>
+    <div class="button" id="t3r4p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r4p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r4p1i"/></div>
+    <div class="button" id="t3r4p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r4p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r4p2i"/></div>
+    <div class="button" id="t3r4p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r4p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r4p3i"/></div>
+    <div class="button" id="t3r4p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r4p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r4p4i"/></div>
+    <div class="button" id="t3r5p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r5p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r5p1i"/></div>
+    <div class="button" id="t3r5p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r5p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r5p2i"/></div>
+    <div class="button" id="t3r5p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r5p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r5p3i"/></div>
+    <div class="button" id="t3r5p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r5p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r5p4i"/></div>
+    <div class="button" id="t3r6p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r6p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r6p1i"/></div>
+    <div class="button" id="t3r6p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r6p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r6p2i"/></div>
+    <div class="button" id="t3r6p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r6p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r6p3i"/></div>
+    <div class="button" id="t3r6p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r6p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r6p4i"/></div>
+    <div class="button" id="t3r7p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r7p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r7p1i"/></div>
+    <div class="button" id="t3r7p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r7p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r7p2i"/></div>
+    <div class="button" id="t3r7p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r7p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r7p3i"/></div>
+    <div class="button" id="t3r7p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r7p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r7p4i"/></div>
+    <div class="button" id="t3r8p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r8p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r8p1i"/></div>
+    <div class="button" id="t3r8p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r8p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r8p2i"/></div>
+    <div class="button" id="t3r8p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r8p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r8p3i"/></div>
+    <div class="button" id="t3r8p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r8p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r8p4i"/></div>
+    <div class="button" id="t3r9p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r9p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r9p1i"/></div>
+    <div class="button" id="t3r9p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r9p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r9p2i"/></div>
+    <div class="button" id="t3r9p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r9p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r9p3i"/></div>
+    <div class="button" id="t3r9p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r9p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r9p4i"/></div>
+    <div class="button" id="t3r10p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r10p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r10p1i"/></div>
+    <div class="button" id="t3r10p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r10p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r10p2i"/></div>
+    <div class="button" id="t3r10p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r10p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r10p3i"/></div>
+    <div class="button" id="t3r10p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r10p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r10p4i"/></div>
+    <div class="button" id="t3r11p1" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r11p1c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r11p1i"/></div>
+    <div class="button" id="t3r11p2" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r11p2c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r11p2i"/></div>
+    <div class="button" id="t3r11p3" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r11p3c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r11p3i"/></div>
+    <div class="button" id="t3r11p4" style="left: -100px;right: -100px;">
+        <div class="buttonnumber" id="t3r11p4c"></div>
+        <img src="{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}" class="talenticon" alt=""
+             id="t3r11p4i"/></div>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="cb" style="height:5px;"></div>
+<table width="900" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td class="copyrightText"><strong>© 2009 WoWProvider</strong> - All game assets and content is © Blizzard
+            Entertainment, Inc. All rights reserved.
+        </td>
+    </tr>
+</table>
+<div id="tooltipbox" class="tooltip">
+    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tbody>
+        <tr>
+            <td id="tooltipcontent"></td>
+            <th style="background-position: right top;"></th>
+        </tr>
+        <tr>
+            <th style="background-position: left bottom;"></th>
+            <th style="background-position: right bottom;"></th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+</body>
+</html>

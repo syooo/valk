@@ -1,0 +1,33 @@
+html {
+    height: auto;
+    min-width: 960px;
+}
+body {
+    height: 100%;
+}
+
+html,
+body {
+    background: #281504 url("/bundles/valkmain/images/backgrounds/family-wow-background-1920.jpg?v=58-1.2.10") no-repeat center -200px !important;
+}
+.header {
+    background: #281504 url("/bundles/valkmain/images/backgrounds/family-wow-background-1920.jpg?v=58-1.2.10") no-repeat center 0 !important;
+}
+@media (max-width: 1280px) {
+    html,
+    body {
+        background: #281504 url("/bundles/valkmain/images/backgrounds/family-wow-background-1280.jpg?v=58-1.2.10") no-repeat center -200px !important;
+    }
+    .header {
+        background: #281504 url("/bundles/valkmain/images/backgrounds/family-wow-background-1280.jpg?v=58-1.2.10") no-repeat center 0 !important;
+    }
+}
+@media (max-width: 1024px) {
+    html,
+    body {
+        background: #281504 url("/bundles/valkmain/images/backgrounds/family-wow-background-1024.jpg?v=58-1.2.10") no-repeat center -200px !important;
+    }
+    .header {
+        background: #281504 url("/bundles/valkmain/images/backgrounds/family-wow-background-1024.jpg?v=58-1.2.10") no-repeat center 0 !important;
+    }
+}

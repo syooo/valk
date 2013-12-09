@@ -1,0 +1,3 @@
+valk_main_homepage:
+    pattern:  /
+    defaults: { _controller: ValkMainBundle:Pages:index }

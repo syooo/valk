@@ -1,0 +1,270 @@
+
+.classDeathknight
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	color: #C41E3B;
+}
+
+.classDruid
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	color: #FF7C0A;
+}
+
+.classHunter
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	color: #AAD372;
+}
+
+.classNone
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	color: #AAD372;
+}
+
+.classMage
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	color: #68CCEF;
+}
+
+.classPaladin
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	color: #F48CBA;
+}
+
+.classPriest
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	color: #FFFFFF;
+}
+
+.classRogue
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	color: #FFF468;
+}
+
+.classShaman
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	color: #2359FF;
+}
+
+.classWarlock
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	color: #9382C9;
+}
+
+.classWarrior
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	font-style: italic;
+	color: #C69B6D;
+}
+
+.classDeathknightMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #C41E3B;
+}
+
+.classDruidMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FF7C0A;
+}
+
+.classHunterMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #AAD372;
+}
+
+.classNoneMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #AAD372;
+}
+
+.classMageMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #68CCEF;
+}
+
+.classPaladinMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #F48CBA;
+}
+
+.classPriestMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.classRogueMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFF468;
+}
+
+.classShamanMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #2359FF;
+}
+
+.classWarlockMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #9382C9;
+}
+
+.classWarriorMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #C69B6D;
+}
+
+.classClassicMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #C69529;
+}
+
+.classWOTLKMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #5071B0;
+}
+
+.classTBCMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #75AF2B;
+}
+
+.classWhiteMenu
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.buildText
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	color: #C7C7C7;
+}
+
+.textLabel
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	color: #FFFFFF;
+}
+
+.textLabelYellow
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #FFD100;
+}
+
+.textTitle
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.copyrightText
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	font-style: normal; 
+	font-weight: normal;
+	color: #C7C7C7;
+}
+
+.cb{clear:both;}
+
+.menu-off 			{ font-size: 12px; height:22px; padding:0px; padding-left:2px; background:url(/img/menu/menu-sub-off.gif) bottom; }
+.menu-on 			{ font-size: 12px; height:22px; padding:0px; padding-left:2px; background:url(/img/menu/menu-sub-on.gif) bottom; }
+.menu-class-off 	{ font-size: 12px; height:22px; padding:0px; padding-left:2px; background:url(/img/menu/menu-class-off.gif) bottom; }
+.menu-class-on 		{ font-size: 12px; height:22px; padding:0px; padding-left:2px; background:url(/img/menu/menu-class-on.gif) bottom; }
+.menu-version-off 	{ font-size: 12px; height:25px; padding:0px; background:url(/img/menu/menu-version-off.gif) bottom; }
+.menu-version-on 	{ font-size: 12px; height:25px; padding:0px; background:url(/img/menu/menu-version-on.gif) bottom; }
+.menu-top-off 		{ font-size: 11px; height:22px; padding:4px; font-weight:bold; padding-left:10px; background:url(/img/menu/menu-top-off.gif) top right no-repeat; }
+.menu-top-on 		{ font-size: 11px; height:22px; padding:4px; font-weight:bold; padding-left:10px; background:url(/img/menu/menu-top-on.gif) top right no-repeat; }
+.menu-checked 		{ font-size: 10px; height:22px; background:url(/img/menu/menu-check.gif) left no-repeat; margin-left:-15px; padding-left:15px; }

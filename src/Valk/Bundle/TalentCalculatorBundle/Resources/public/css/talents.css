@@ -1,0 +1,113 @@
+body
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	background-color: #000000;
+	color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
+
+input
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	color: #C7C7C7; 
+	background-color: #131313; 
+	border-bottom: #6F6D67 1px solid;
+	border-LEFT: #6F6D67 1px solid;
+	border-RIGHT: #6F6D67 1px solid; 
+	border-TOP: #6F6D67 1px solid;
+}
+
+.stdText
+{
+	font-family:Verdana, Helvetica, Arial, sans-serif;
+	color:#FFFFFF;
+	font-size:11px;
+	font-weight:normal;
+}
+
+a:link
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	font-style: normal; 
+	color: #FFFFFF; 
+	text-decoration: none;
+}
+
+a:active
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	font-style: normal; 
+	color: #FFFFFF; 
+	text-decoration: none;
+}
+
+a:hover
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	font-style: normal; 
+	color: #FFFFFF; 
+	text-decoration: underline;
+}
+
+a:visited
+{
+	font-family: Verdana, Helvetica, Arial, sans-serif;
+	font-size: 10px;
+	font-style: normal; 
+	color: #FFFFFF; 
+	text-decoration: none;
+}
+
+.contentarea{margin-top:5px;margin-left:5px;width:90%;}
+.button{position:absolute;background-image:none;background-repeat:no-repeat;background-position:2px 2px;text-align:center;vertical-align:middle;width:56px;height:54px;}
+.buttonnumber{position:absolute;color:#0F0;font-size:10px;vertical-align:middle;text-align:center;font-family:Verdana, Helvetica, Arial, sans-serif;width:21px;height:10px;right:3px;bottom:4px;}
+.window{position:absolute;background-color:#000;left:-1000px;width:300px;top:135px;padding:1px 1px 1px 1px;color:#000;z-index:6;}
+.window a{color:#000001;}
+.window th{background-color:#333;border:1px solid #CCC;color:#FFF;}
+.window table{background-color:#DADADA;border:0 solid #CCC;}
+
+.arrowrd{background-image:url(/bundles/valktalentcalculator/images/talent/arrow/rightdown.png);position:absolute;background-position:right top;z-index:2;}
+.arrowd{background-image:url(/bundles/valktalentcalculator/images/talent/arrow/down.png);position:absolute;background-position:right bottom;z-index:2;}
+.arrowld{background-image:url(/bundles/valktalentcalculator/images/talent/arrow/leftdown.png);position:absolute;background-position:left top;z-index:2;}
+.arrowl{background-image:url(/bundles/valktalentcalculator/images/talent/arrow/left.png);position:absolute;background-position:left bottom;z-index:2;}
+.arrowr{background-image:url(/bundles/valktalentcalculator/images/talent/arrow/right.png);position:absolute;background-position:right bottom;z-index:2;}
+
+.arrowrd_yellow{background-image:url(/bundles/valktalentcalculator/images/talent/arrow/rightdown_yellow.png);position:absolute;background-position:right top;z-index:2;}
+.arrowd_yellow{background-image:url(/bundles/valktalentcalculator/images/talent/arrow/down_yellow.png);position:absolute;background-position:right bottom;z-index:2;}
+.arrowld_yellow{background-image:url(/bundles/valktalentcalculator/images/talent/arrow/leftdown_yellow.png);position:absolute;background-position:left top;z-index:2;}
+.arrowl_yellow{background-image:url(/bundles/valktalentcalculator/images/talent/arrow/left_yellow.png);position:absolute;background-position:left bottom;z-index:2;}
+.arrowr_yellow{background-image:url(/bundles/valktalentcalculator/images/talent/arrow/right_yellow.png);position:absolute;background-position:right bottom;z-index:2;}
+
+.tooltip {position:absolute;z-index:9999;font-family:Verdana, Helvetica, Arial, sans-serif;color:#FFFFFF;font-size:12px;line-height:17px;width:300px;left:-1000px;}
+.tooltip td td{background:none;padding:0;color:#FFFFFF;}
+.tooltip th{padding:3px;height:8px;}
+.tooltip td{padding:8px 4px 1px 9px;cursor:default;color:#FFFFFF;}
+.tooltip .desc{color:#FFD100;}
+.tooltip .tip{color:#0F0;}
+.tooltip .reqmet{color:#0F0;}
+.tooltip .reqnotmet{color:#F00;}
+.tooltip .left{float:left;}
+.tooltip .right{float:right;text-align:right;height:0;}
+.tooltip .hleft{float:left;}
+.tooltip .hright{float:right;text-align:right;height:0;}
+.tooltip .rankright{float:right;text-align:right;height:0;color:#9D9D9D;font-size:14px;}
+
+.yellowFont{color:#FFD100;}
+
+.talentheader {border-bottom:0px solid #002B55;background-image:url('/bundles/valktalentcalculator/images/talent/tableheader.png');}
+.talentheader div{padding-right:20px;background-repeat:no-repeat;background-position:bottom right;height:41px;width:209px;float:left;}
+.talentheader strong{font-weight:bold;display:block;padding-left:18px;padding-top:14px;vertical-align:bottom;}
+.talentheader img {margin-top:11px; cursor:pointer; background-image:url(/bundles/valktalentcalculator/images/talent/resetbutton.png);}
+
+.outerbg{border:0px solid #002B55;background-color:#002B55;}
+.talenticon{background-image:url(/bundles/valktalentcalculator/images/talent/borders.gif);background-position:0 0;background-repeat:no-repeat;width:56px;height:54px;}
+.noscript{position:absolute;left:462px;right:318px;top:5px;overflow:hidden;text-align:center;z-index:20;border:2px solid #600;color:#FFF;font-size:12px;padding:3px;}
+
+.tooltip td,
+.tooltip th{background:url(/bundles/valktalentcalculator/images/tooltip.gif);}
