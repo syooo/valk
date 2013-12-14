@@ -1,5 +1,4 @@
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru-ru" class="ru-ru">
+<html  xml:lang="ru-ru" class="ru-ru">
 <head xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta http-equiv="imagetoolbar" content="false" />
@@ -18,25 +17,24 @@
         '@ValkMainBundle/Resources/public/css/global.min.css'
         '@ValkMainBundle/Resources/public/css/product.min.css'
         '@ValkMainBundle/Resources/public/css/browse.min.css'
-        '@ValkMainBundle/Resources/public/css/skin.css'
         '@ValkMainBundle/Resources/public/css/bootstrap.css'
         '@ValkMainBundle/Resources/public/css/valk.css'
      %}
         <link rel="stylesheet" href="{{ asset_url }}"/>
     {% endstylesheets %}
 
-
-    <link rel="stylesheet" type="text/css" media="all" href="/shop/static/local-common/css/common.min.css?v=58-1.2.10" />
-
-    <link rel="stylesheet" type="text/css" media="all" href="/shop/static/css/global/global.min.css?v=58-1.2.10" />
-    <link rel="stylesheet" type="text/css" media="all" href="/shop/static/css/browse/browse.min.css?v=58-1.2.10" />
+    {#<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>#}
 
 
+    {% block skin %}
+        {% stylesheets filter='cssrewrite'
+        '@ValkMainBundle/Resources/public/css/skins/lava.css'
+        %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock %}
 
 
-
-    <link rel="search" type="application/opensearchdescription+xml" href="http://eu.battle.net/ru-ru/data/opensearch" title="Поиск по Battle.net" />
-    <script src="/shop/static/local-common/js/third-party/jquery-1.10.2.min.js?v=58-1.2.10"></script>
     <script src="/shop/static/local-common/js/core.min.js?v=58-1.2.10"></script>
 
 
@@ -65,10 +63,7 @@
         Flash.videoBase = 'http://media.blizzard.com/shop/media/videos';
         Flash.ratingImage = 'http://media.blizzard.com/global-video-player/ratings/shop/ru-ru.jpg';
         Flash.expressInstall = 'http://media.blizzard.com/global-video-player/expressInstall.swf';
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-544112-16']);
-        _gaq.push(['_setDomainName', '.battle.net']);
-        _gaq.push(['_setAllowLinker', true]);
+
         //]]>
     </script>
 
@@ -85,7 +80,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
-<body class=" browse-template">
+<body class="browse-template">
 <script>
     //<![CDATA[
     (function() {
@@ -99,22 +94,26 @@
 <div class="header-primary">
 <div class="container" style="position: relative;">
 <h1 class="heading-3 shop-logo">
-    <a href="/shop/ru/">
+    <a href="{{ path('valk_main_homepage') }}">
         Valkyrie WoW
         <span class="beta-tag">Classic 1.12.2</span>
     </a>
 </h1>
 
 
-<div xmlns="http://www.w3.org/1999/xhtml" id="service">
+<div  id="service">
     <ul class="service-bar">
-        <li class="service-cell service-welcome">
-            <a href="?login" onclick="return Login.open()">Log in</a> or <a href="https://us.battle.net/account/creation/tos.html">Create an Account</a>
-        </li>
-        <li xmlns="http://www.w3.org/1999/xhtml" class="service-cell service-welcome">
-            Welcome, Bobob
-            |  <a href="?logout=fast" tabindex="50" accesskey="2">log out</a>
-        </li>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li class="service-cell service-welcome">
+                Welcome, {{ app.user.username }}
+                |  <a href="{{ path('logout') }}" tabindex="50" accesskey="2">log out</a>
+            </li>
+        {% else %}
+            <li class="service-cell service-welcome">
+                <a href="{{ path('login') }}" >Log in</a> or <a href="https://us.battle.net/account/creation/tos.html">Create an Account</a>
+            </li>
+        {% endif %}
+
         <li class="service-cell service-shop">
             <a href="https://us.battle.net/shop/" class="service-link" data-action="Shop">Account</a>
         </li>
@@ -149,10 +148,12 @@
 <div class="navbar navbar-static-top header-secondary">
     <div class="navbar-inner">
         <div class="container">
-            <ul class="breadcrumb">
-                <li><a href="{{ path('valk_main_homepage') }}"><span class="breadcrumb-home"><span class="home-new-icon glyphicon glyphicon-home"></span> {{ 'Main page'|trans }}</span></a> <span class="divider glyphicon glyphicon-chevron-right"></span></li>
-                <li class="active">{{ 'How to start'|trans }}</li>
-            </ul>
+
+            {% import 'ValkMainBundle:blocks:breadcrumbs/breadcrumbs.html.twig' as breadcrumbs %}
+
+            {% block breadcrumbs %}
+                {{ breadcrumbs.show() }}
+            {% endblock %}
 
 
             <div class="region-status dropdown" >
@@ -168,97 +169,17 @@
     </div>
 </div>
 </header>
-<div class="container home">
-<div class="row">
-<div class="span6 sidebar">
-    <ul class="game-types">
-        <li>
-            <a href="/shop/ru/product/game/diablo">
-                <span class="glyphicon glyphicon-flag"></span> How to start
-            </a>
-        </li>
-        <li>
-            <a href="/shop/ru/product/game/wow">
-                <span class="glyphicon glyphicon-plus"></span> Create Account
-            </a>
-        </li>
-
-        <li>
-            <a href="/shop/ru/product/game/starcraft">
-                <span class="glyphicon glyphicon-comment"></span> Boards
-            </a>
-        </li>
-        <li>
-            <a href="/shop/ru/product/game/battle-net">
-                <span class="glyphicon glyphicon-user"></span> Account
-            </a>
-        </li>
-        <li>
-            <a href="/shop/ru/product/game/hearthstone">
-                <span class="glyphicon glyphicon-tower"></span> Armory
-            </a>
-        </li>
-
-    </ul>
-    <h2 class="heading-6 browse-by-type">{{ 'Navigation'|trans }}</h2>
-    <ul class="product-types">
-        <li>
-            <a href="/shop/ru/product/category/digital-games">
-                Control Panel
-            </a>
-        </li>
-        <li>
-            <a href="/shop/ru/product/category/game-time">
-                Подписка
-                <span class="product-count">(1)</span>
-            </a>
-        </li>
-        <li>
-            <a href="/shop/ru/product/category/pets">
-                Питомцы
-                <span class="product-count">(11)</span>
-            </a>
-        </li>
-        <li>
-            <a href="/shop/ru/product/category/mounts">
-                Средства передвижения
-                <span class="product-count">(6)</span>
-            </a>
-        </li>
-        <li>
-            <a href="/shop/ru/product/category/helms">
-                Шлемы
-                <span class="product-count">(3)</span>
-            </a>
-        </li>
-        <li>
-            <a href="/shop/ru/product/category/game-services">
-                Внутриигровые услуги
-                <span class="product-count">(10)</span>
-            </a>
-        </li>
-        <li>
-            <a href="/shop/ru/product/battlenet-balance">
-                Кошелек Battle.net
-            </a>
-        </li>
-    </ul>
-    <div class="sidebar-links">
-        <p><a href="http://eu.battle.net/account/management/claim-code.html" rel="external" target="_blank">Использовать код <i class="icon icon-external-link"></i></a></p>
-    </div>
-</div>
-<div class="span18 main">
 
 
-    {% block content %}
+<div class="container {% if is_front %}home{% else %}product-template{% endif %}">
 
-    {% endblock %}
+        {% block content %}
+
+        {% endblock %}
 
 
 
 
-</div>
-</div>
 </div>
 <script>
     //<![CDATA[

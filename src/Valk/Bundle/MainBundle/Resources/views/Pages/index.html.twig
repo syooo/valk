@@ -1,157 +1,260 @@
 {% extends 'ValkMainBundle::layout.html.twig' %}
 
+
+{% block skin %}
+    {% stylesheets filter='cssrewrite'
+    '@ValkMainBundle/Resources/public/css/skins/blood_elf.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
+
+
+
 {% block content %}
-<!--<div id="hero-carousel" class="carousel crossfade">
-        <div class="carousel-inner">
-            <div class="active item ">
-                <a href="/shop/ru/product/world-of-warcraft">
-                    <div class="cover"></div>
-                    <img src="/shop/static/images/banners/ru/wow.jpg" width="868" height="310" alt="World of Warcraft, Rozpocznij niesamowitą przygodę" />
-                </a>
-            </div>
-            <div class=" item ">
-                <a href="/shop/ru/product/diablo-iii">
-                    <div class="cover"></div>
-                    <img src="/shop/static/images/banners/ru/d3.jpg" width="868" height="310" alt="Diablo III, Zło osiągnęło apogeum" />
-                </a>
-            </div>
-            <div class=" item ">
-                <a href="/shop/ru/product/starcraft-ii-heart-of-the-swarm">
-                    <div class="cover"></div>
-                    <img src="/shop/static/images/banners/ru/sc2.jpg" width="868" height="310" alt="StarCraft II: Heart of the Swarm, Witaj w zbiorowej świadomości" />
-                </a>
-            </div>
-            <div class=" item ">
-                <a href="/shop/ru/product/game/wow?categories=pets,mounts,helms">
-                    <div class="cover"></div>
-                    <img src="/shop/static/images/banners/ru/wow-pet-mounts.jpg" width="868" height="310" alt="World of Warcraft - Zwierzaki, wierzchowce i wiele więcej!" />
-                </a>
-            </div>
-        </div>
-        <div class="carousel-controls">
-            <button class="left" href="#hero-carousel" data-slide="prev"><span></span></button>
-            <button class="right" href="#hero-carousel" data-slide="next"><span></span></button>
-        </div>
-    </div>
-    <ul class="product-card-container thumbnails">
+
+    <div class="row">
+<div class="span6 sidebar">
+    <ul class="game-types">
         <li>
-            <a class="product-link" href="/shop/ru/product/world-of-warcraft" tabindex="1">
-                <div class="cover"></div>
-                <div class="thumbnail">
-                    <img src="//bnetproducteu-a.akamaihd.net//products/2210039581000004249/96516336B7C8273AC9E6F49ED98AF016DD2D5F59.jpg" alt="World of Warcraft" width="220" height="124" />
-                    <div class="product-card-info">
-                        <h2 class="product-name">World of Warcraft®</h2>
-                        <p class="product-price discount ">
-                            5,00 <span class="currency-code" title="евро">EUR</span>
-                            <s>14,99 <span class="currency-code" title="евро">EUR</span></s>
-                        </p>
-                    </div>
-                </div>
+            <a href="{{ path('valk_main_how_to_start') }}">
+                <span class="glyphicon glyphicon-flag"></span> How to start
             </a>
         </li>
         <li>
-            <a class="product-link" href="/shop/ru/product/world-of-warcraft-subscription" tabindex="1">
-                <div class="cover"></div>
-                <div class="thumbnail">
-                    <img src="//bnetproducteu-a.akamaihd.net//dg/244/6ED79E3989B153116074B80F7AF719308B965EF3.jpg" alt="Подписка" width="220" height="124" />
-                    <div class="product-card-info">
-                        <h2 class="product-name">Подписка</h2>
-                        <p class="product-price unavailable">Подробнее</p>
-                    </div>
-                </div>
+            <a href="/shop/ru/product/game/wow">
+                <span class="glyphicon glyphicon-plus"></span> Create Account
+            </a>
+        </li>
+
+        <li>
+            <a href="/shop/ru/product/game/starcraft">
+                <span class="glyphicon glyphicon-comment"></span> Boards
             </a>
         </li>
         <li>
-            <a class="product-link" href="/shop/ru/product/starcraft-ii-wings-of-liberty" tabindex="1">
-                <div class="cover"></div>
-                <div class="thumbnail">
-                    <img src="//bnetproducteu-a.akamaihd.net//products/2210040391000004514/7AEE52253FD80703435D6418A718AF474B78D1CC.jpg" alt="StarCraft II: Wings of Liberty" width="220" height="124" />
-                    <div class="product-card-info">
-                        <h2 class="product-name"> StarCraft® II:<br />
-                            Wings of Liberty®
-                        </h2>
-                        <p class="product-price discount ">
-                            299,00 <span class="currency-code" title="российский рубль">RUB</span>
-                            <s>499,00 <span class="currency-code" title="российский рубль">RUB</span></s>
-                        </p>
-                    </div>
-                </div>
+            <a href="/shop/ru/product/game/battle-net">
+                <span class="glyphicon glyphicon-user"></span> Account
             </a>
         </li>
         <li>
-            <a class="product-link" href="/shop/ru/product/starcraft-ii-heart-of-the-swarm" tabindex="1">
-                <div class="cover"></div>
-                <div class="thumbnail">
-                    <div class="product-card-info">
-                        <h2 class="product-name"> StarCraft® II:<br />
-                            Heart of the Swarm®
-                        </h2>
-                        <p class="product-price discount">От 499,00 RUB</p>
-                    </div>
-                </div>
+            <a href="/shop/ru/product/game/hearthstone">
+                <span class="glyphicon glyphicon-tower"></span> Armory
+            </a>
+        </li>
+
+    </ul>
+    <h2 class="heading-6 browse-by-type">{{ 'Navigation'|trans }}</h2>
+    <ul class="product-types">
+        <li>
+            <a href="/shop/ru/product/category/digital-games">
+                Control Panel
             </a>
         </li>
         <li>
-            <a class="product-link" href="/shop/ru/product/world-of-warcraft-mount-fey-dragon-bundle" tabindex="1">
-                <div class="cover"></div>
-                <div class="thumbnail">
-                    <img src="//bnetproducteu-a.akamaihd.net//products/2210058041000007079/9E91532A5534FB0D68FAA5EBE5B5BE83091CA5CA.jpg" alt="Щенок альтеракского мастифа и Волшебный дракончик" width="220" height="124" />
-                    <div class="product-card-info">
-                        <h2 class="product-name">Щенок альтеракского мастифа и Волшебный дракончик</h2>
-                        <p class="product-price ">
-                            770,00 <span class="currency-code" title="российский рубль">RUB</span>
-                        </p>
-                    </div>
-                </div>
+            <a href="/shop/ru/product/category/game-time">
+                Подписка
+                <span class="product-count">(1)</span>
             </a>
         </li>
         <li>
-            <a class="product-link" href="/shop/ru/product/world-of-warcraft-mount-enchanted-fey-dragon" tabindex="1">
-                <div class="cover"></div>
-                <div class="thumbnail">
-                    <img src="//bnetproducteu-a.akamaihd.net//products/2210058031000007078/A13E85175533E5776C92D1EFC1CDD012EE72E765.jpg" alt="Зачарованный волшебный дракончик" width="220" height="124" />
-                    <div class="product-card-info">
-                        <h2 class="product-name">Зачарованный волшебный дракончик</h2>
-                        <p class="product-price ">
-                            600,00 <span class="currency-code" title="российский рубль">RUB</span>
-                        </p>
-                    </div>
-                </div>
+            <a href="/shop/ru/product/category/pets">
+                Питомцы
+                <span class="product-count">(11)</span>
             </a>
         </li>
         <li>
-            <a class="product-link" href="/shop/ru/product/world-of-warcraft-pet-alterac-brew-pup" tabindex="1">
-                <div class="cover"></div>
-                <div class="thumbnail">
-                    <img src="//bnetproducteu-a.akamaihd.net//products/2210058021000007077/A2491FFBD9C1832A065663B249A06B8812D90A16.jpg" alt="Щенок альтеракского мастифа" width="220" height="124" />
-                    <div class="product-card-info">
-                        <h2 class="product-name">Щенок альтеракского мастифа</h2>
-                        <p class="product-price ">
-                            300,00 <span class="currency-code" title="российский рубль">RUB</span>
-                        </p>
-                    </div>
-                </div>
+            <a href="/shop/ru/product/category/mounts">
+                Средства передвижения
+                <span class="product-count">(6)</span>
             </a>
         </li>
         <li>
-            <a class="product-link" href="/shop/ru/product/diablo-iii" tabindex="1">
-                <div class="cover"></div>
-                <div class="thumbnail">
-                    <img src="//bnetproducteu-a.akamaihd.net//products/2210052221000006117/6C8D3D634BC02E23820F88F78B34713A38599A25.jpg" alt="Diablo III" width="220" height="124" />
-                    <div class="product-card-info">
-                        <h2 class="product-name">Diablo® III</h2>
-                        <p class="product-price ">
-                            999,00 <span class="currency-code" title="российский рубль">RUB</span>
-                        </p>
-                    </div>
-                </div>
+            <a href="/shop/ru/product/category/helms">
+                Шлемы
+                <span class="product-count">(3)</span>
+            </a>
+        </li>
+        <li>
+            <a href="/shop/ru/product/category/game-services">
+                Внутриигровые услуги
+                <span class="product-count">(10)</span>
+            </a>
+        </li>
+        <li>
+            <a href="/shop/ru/product/battlenet-balance">
+                Кошелек Battle.net
             </a>
         </li>
     </ul>
+    <div class="sidebar-links">
+        <p><a href="http://eu.battle.net/account/management/claim-code.html" rel="external" target="_blank">Использовать код <i class="icon icon-external-link"></i></a></p>
+    </div>
+</div>
 
-    -->
 
-<div class="main-page-content product-template">
+
+<div class="span18 main">
+
+
+
+
+
+
+
+
+
+    <!--<div id="hero-carousel" class="carousel crossfade">
+            <div class="carousel-inner">
+                <div class="active item ">
+                    <a href="/shop/ru/product/world-of-warcraft">
+                        <div class="cover"></div>
+                        <img src="/shop/static/images/banners/ru/wow.jpg" width="868" height="310" alt="World of Warcraft, Rozpocznij niesamowitą przygodę" />
+                    </a>
+                </div>
+                <div class=" item ">
+                    <a href="/shop/ru/product/diablo-iii">
+                        <div class="cover"></div>
+                        <img src="/shop/static/images/banners/ru/d3.jpg" width="868" height="310" alt="Diablo III, Zło osiągnęło apogeum" />
+                    </a>
+                </div>
+                <div class=" item ">
+                    <a href="/shop/ru/product/starcraft-ii-heart-of-the-swarm">
+                        <div class="cover"></div>
+                        <img src="/shop/static/images/banners/ru/sc2.jpg" width="868" height="310" alt="StarCraft II: Heart of the Swarm, Witaj w zbiorowej świadomości" />
+                    </a>
+                </div>
+                <div class=" item ">
+                    <a href="/shop/ru/product/game/wow?categories=pets,mounts,helms">
+                        <div class="cover"></div>
+                        <img src="/shop/static/images/banners/ru/wow-pet-mounts.jpg" width="868" height="310" alt="World of Warcraft - Zwierzaki, wierzchowce i wiele więcej!" />
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="left" href="#hero-carousel" data-slide="prev"><span></span></button>
+                <button class="right" href="#hero-carousel" data-slide="next"><span></span></button>
+            </div>
+        </div>
+        <ul class="product-card-container thumbnails">
+            <li>
+                <a class="product-link" href="/shop/ru/product/world-of-warcraft" tabindex="1">
+                    <div class="cover"></div>
+                    <div class="thumbnail">
+                        <img src="//bnetproducteu-a.akamaihd.net//products/2210039581000004249/96516336B7C8273AC9E6F49ED98AF016DD2D5F59.jpg" alt="World of Warcraft" width="220" height="124" />
+                        <div class="product-card-info">
+                            <h2 class="product-name">World of Warcraft®</h2>
+                            <p class="product-price discount ">
+                                5,00 <span class="currency-code" title="евро">EUR</span>
+                                <s>14,99 <span class="currency-code" title="евро">EUR</span></s>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="product-link" href="/shop/ru/product/world-of-warcraft-subscription" tabindex="1">
+                    <div class="cover"></div>
+                    <div class="thumbnail">
+                        <img src="//bnetproducteu-a.akamaihd.net//dg/244/6ED79E3989B153116074B80F7AF719308B965EF3.jpg" alt="Подписка" width="220" height="124" />
+                        <div class="product-card-info">
+                            <h2 class="product-name">Подписка</h2>
+                            <p class="product-price unavailable">Подробнее</p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="product-link" href="/shop/ru/product/starcraft-ii-wings-of-liberty" tabindex="1">
+                    <div class="cover"></div>
+                    <div class="thumbnail">
+                        <img src="//bnetproducteu-a.akamaihd.net//products/2210040391000004514/7AEE52253FD80703435D6418A718AF474B78D1CC.jpg" alt="StarCraft II: Wings of Liberty" width="220" height="124" />
+                        <div class="product-card-info">
+                            <h2 class="product-name"> StarCraft® II:<br />
+                                Wings of Liberty®
+                            </h2>
+                            <p class="product-price discount ">
+                                299,00 <span class="currency-code" title="российский рубль">RUB</span>
+                                <s>499,00 <span class="currency-code" title="российский рубль">RUB</span></s>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="product-link" href="/shop/ru/product/starcraft-ii-heart-of-the-swarm" tabindex="1">
+                    <div class="cover"></div>
+                    <div class="thumbnail">
+                        <div class="product-card-info">
+                            <h2 class="product-name"> StarCraft® II:<br />
+                                Heart of the Swarm®
+                            </h2>
+                            <p class="product-price discount">От 499,00 RUB</p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="product-link" href="/shop/ru/product/world-of-warcraft-mount-fey-dragon-bundle" tabindex="1">
+                    <div class="cover"></div>
+                    <div class="thumbnail">
+                        <img src="//bnetproducteu-a.akamaihd.net//products/2210058041000007079/9E91532A5534FB0D68FAA5EBE5B5BE83091CA5CA.jpg" alt="Щенок альтеракского мастифа и Волшебный дракончик" width="220" height="124" />
+                        <div class="product-card-info">
+                            <h2 class="product-name">Щенок альтеракского мастифа и Волшебный дракончик</h2>
+                            <p class="product-price ">
+                                770,00 <span class="currency-code" title="российский рубль">RUB</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="product-link" href="/shop/ru/product/world-of-warcraft-mount-enchanted-fey-dragon" tabindex="1">
+                    <div class="cover"></div>
+                    <div class="thumbnail">
+                        <img src="//bnetproducteu-a.akamaihd.net//products/2210058031000007078/A13E85175533E5776C92D1EFC1CDD012EE72E765.jpg" alt="Зачарованный волшебный дракончик" width="220" height="124" />
+                        <div class="product-card-info">
+                            <h2 class="product-name">Зачарованный волшебный дракончик</h2>
+                            <p class="product-price ">
+                                600,00 <span class="currency-code" title="российский рубль">RUB</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="product-link" href="/shop/ru/product/world-of-warcraft-pet-alterac-brew-pup" tabindex="1">
+                    <div class="cover"></div>
+                    <div class="thumbnail">
+                        <img src="//bnetproducteu-a.akamaihd.net//products/2210058021000007077/A2491FFBD9C1832A065663B249A06B8812D90A16.jpg" alt="Щенок альтеракского мастифа" width="220" height="124" />
+                        <div class="product-card-info">
+                            <h2 class="product-name">Щенок альтеракского мастифа</h2>
+                            <p class="product-price ">
+                                300,00 <span class="currency-code" title="российский рубль">RUB</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a class="product-link" href="/shop/ru/product/diablo-iii" tabindex="1">
+                    <div class="cover"></div>
+                    <div class="thumbnail">
+                        <img src="//bnetproducteu-a.akamaihd.net//products/2210052221000006117/6C8D3D634BC02E23820F88F78B34713A38599A25.jpg" alt="Diablo III" width="220" height="124" />
+                        <div class="product-card-info">
+                            <h2 class="product-name">Diablo® III</h2>
+                            <p class="product-price ">
+                                999,00 <span class="currency-code" title="российский рубль">RUB</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+        -->
+
+<div class="main-page-content">
 
     <h2 class="heading-1 product-features-header">Welcome to Valkyrie WoW</h2>
 
@@ -166,7 +269,7 @@
                 <img class="product-feature-image" src="https://bnetproducteu-a.akamaihd.net//dg/244/4ACBC323953CE16732ABF7F274E2AB17668D04D4.jpg" />
                 <div class="img-overlay"></div>
             </div>
-            <h3 class="product-feature-headline heading-3">Awesome Developers
+            <h3 class="product-feature-headline heading-3">Awesome Dev Team
             </h3>
                 <p class="product-feature-description">Our server is running on our own designed core Anathema, running patch 1.12.1. With over 2400 uniq fixes our realm is one of the greatest and active well scripted servers.
             </p>
@@ -176,7 +279,7 @@
                 <img class="product-feature-image" src="https://bnetproducteu-a.akamaihd.net//dg/244/1CC2B252EE32DFF4400A45430933FDEDE4E9F6CF.jpg" />
                 <div class="img-overlay"></div>
             </div>
-            <h3 class="product-feature-headline heading-3">Three plans to choose from
+            <h3 class="product-feature-headline heading-3">Blizzlike x1 rates
             </h3>
             <p class="product-feature-description">World of Warcraft subscriptions come in three plans: 1 month, 3 months, and 6 months at a time. You’ll save money when choosing the 3- or 6-month options.
             </p>
@@ -186,29 +289,25 @@
                 <img class="product-feature-image" src="https://bnetproducteu-a.akamaihd.net//dg/244/1798ED13BA11CC06D67644B83D4F31B31BC9A6BE.jpg" />
                 <div class="img-overlay"></div>
             </div>
-            <h3 class="product-feature-headline heading-3">Unlimited World of Warcraft
+            <h3 class="product-feature-headline heading-3">Anticheat system
             </h3>
-            <p class="product-feature-description">With a subscription, you don’t have to worry about your game time running out – you can play as much as you want!
+            <p class="product-feature-description">Anticheat system <a rel="nofollow" target="_blank" href="http://ru.wikipedia.org/wiki/Blizzard_Entertainment#Warden_Client"><strong>Warden</strong></a>!
             </p>
         </div>
     </div>
 
 
-
-    <p>Our server is running on our own designed core Anathema, running patch 1.12.1. With over 120,000 accounts and 210,000 characters our realm is one of the greatest and active well scripted servers.</p>
-    <br>
-    <p>We are the best <strong>vanilla 1.12.1, 1.12.2 private server.</strong></p>
-    <br>
-    <h3>Features:</h3>
     <ul class="allul">
         <li>x1 rates.</li>
         <li>Anticheat system <a rel="nofollow" target="_blank" href="http://ru.wikipedia.org/wiki/Blizzard_Entertainment#Warden_Client"><strong>Warden</strong></a>!</li>
+
+
         <li>4 years of stable work.</li>
         <li>No gamebreaking donation rewards.</li>
         <li>Blizzlike hand-made honor system.</li>
+
         <li>Frequent updates and fixes.</li>
-        <li>Active developers and administration team.</li>
-        <li>Professional developer team (over 2000 fixes!).</li>
+
         <li>Hand-made Blizzlike: BWL, MC, ZG, Onyxia, Strat, Scholo, Dire Maul, BRD, UBRS, LBRS.</li>
     </ul>
     <br>
@@ -218,6 +317,9 @@
     <br><br>
     <a href="http://valkyrie-wow.ru/" title="Welcome to Valkyrie WoW"><img src="imgs/ru.png" alt="Русский сайт"> Русский сайт</a>
     <br><br>
+</div>
+
+</div>
 </div>
 
 {% endblock %}

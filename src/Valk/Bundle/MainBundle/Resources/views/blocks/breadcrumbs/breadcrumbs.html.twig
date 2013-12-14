@@ -1,0 +1,32 @@
+{% macro show(breadcrumbs) %}
+    <ul class="breadcrumb">
+        {% if breadcrumbs|length %}
+            <li>
+                <a href="{{ path('valk_main_homepage') }}">
+                    <span class="breadcrumb-home">
+                        <span class="home-new-icon glyphicon glyphicon-home"></span> {{ 'Main page'|trans }}
+                    </span>
+                </a>
+                <span class="divider glyphicon glyphicon-chevron-right"></span>
+            </li>
+            {% for crumb, href in breadcrumbs %}
+                {% if not loop.last %}
+                    <li>
+                        <a href="{{ href }}">
+                        {{ crumb|trans }}
+                        </a>
+                        <span class="divider glyphicon glyphicon-chevron-right"></span>
+                    </li>
+                {% else %}
+                    <li class="active">{{ crumb|trans }}</li>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <li class="active">
+                <span class="breadcrumb-home">
+                    <span class="home-new-icon glyphicon glyphicon-home"></span> {{ 'Main page'|trans }}
+                </span>
+            </li>
+        {% endif %}
+    </ul>
+{% endmacro %}

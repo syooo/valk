@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Valk\Bundle\MainBundle\Entity\Realmlist" table="realmlist">
+    <unique-constraints>
+      <unique-constraint name="idx_name" columns="name"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="name" type="string" column="name" length="32" nullable="false"/>
+    <field name="address" type="string" column="address" length="32" nullable="false"/>
+    <field name="port" type="integer" column="port" nullable="false"/>
+    <field name="icon" type="boolean" column="icon" nullable="false"/>
+    <field name="color" type="boolean" column="color" nullable="false"/>
+    <field name="timezone" type="boolean" column="timezone" nullable="false"/>
+    <field name="allowedsecuritylevel" type="boolean" column="allowedSecurityLevel" nullable="false"/>
+    <field name="population" type="float" column="population" precision="10" scale="0" nullable="false"/>
+    <field name="realmbuilds" type="string" column="realmbuilds" length="64" nullable="false"/>
+    <field name="revision" type="string" column="revision" length="5" nullable="false"/>
+  </entity>
+</doctrine-mapping>

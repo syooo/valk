@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Valk\Bundle\MainBundle\Entity\Account" table="account">
+    <indexes>
+      <index name="idx_gmlevel" columns="gmlevel"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="idx_username" columns="username"/>
+    </unique-constraints>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="username" type="string" column="username" length="32" nullable="false"/>
+    <field name="shaPassHash" type="string" column="sha_pass_hash" length="40" nullable="false"/>
+    <field name="gmlevel" type="boolean" column="gmlevel" nullable="false"/>
+    <field name="sessionkey" type="text" column="sessionkey" nullable="true"/>
+    <field name="v" type="text" column="v" nullable="true"/>
+    <field name="s" type="text" column="s" nullable="true"/>
+    <field name="email" type="text" column="email" nullable="true"/>
+    <field name="joindate" type="datetime" column="joindate" nullable="false"/>
+    <field name="lastIp" type="string" column="last_ip" length="30" nullable="false"/>
+    <field name="failedLogins" type="integer" column="failed_logins" nullable="false"/>
+    <field name="locked" type="boolean" column="locked" nullable="false"/>
+    <field name="lastLogin" type="datetime" column="last_login" nullable="false"/>
+    <field name="activeRealmId" type="integer" column="active_realm_id" nullable="false"/>
+    <field name="mutetime" type="bigint" column="mutetime" nullable="false"/>
+    <field name="locale" type="boolean" column="locale" nullable="false"/>
+    <field name="regIp" type="string" column="reg_ip" length="30" nullable="false"/>
+    <field name="clientInfo" type="string" column="client_info" length="30" nullable="false"/>
+  </entity>
+</doctrine-mapping>

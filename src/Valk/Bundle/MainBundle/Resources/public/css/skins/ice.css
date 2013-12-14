@@ -1,0 +1,33 @@
+
+html {
+    height: auto;
+    min-width: 960px;
+}
+body {
+    height: 100%;
+}
+html,
+body {
+    background: #002130 url("//bnetproducteu-a.akamaihd.net//dg/273/F5E5F86F6325922B735EC7F2F9BF5BA15FE2B507.jpg") no-repeat center -200px !important;
+}
+.header {
+    background: #002130 url("//bnetproducteu-a.akamaihd.net//dg/273/F5E5F86F6325922B735EC7F2F9BF5BA15FE2B507.jpg") no-repeat center 0 !important;
+}
+@media (max-width: 1280px) {
+    html,
+    body {
+        background: #002130 url("//bnetproducteu-a.akamaihd.net//dg/273/C8D3703BD45722ABC429D073F567919C6A67CF75.jpg") no-repeat center -200px !important;
+    }
+    .header {
+        background: #002130 url("//bnetproducteu-a.akamaihd.net//dg/273/C8D3703BD45722ABC429D073F567919C6A67CF75.jpg") no-repeat center 0 !important;
+    }
+}
+@media (max-width: 1024px) {
+    html,
+    body {
+        background: #002130 url("//bnetproducteu-a.akamaihd.net//dg/273/5A196D27F632299B5F82EC2BCD162A9157961CEB.jpg") no-repeat center -200px !important;
+    }
+    .header {
+        background: #002130 url("//bnetproducteu-a.akamaihd.net//dg/273/5A196D27F632299B5F82EC2BCD162A9157961CEB.jpg") no-repeat center 0 !important;
+    }
+}

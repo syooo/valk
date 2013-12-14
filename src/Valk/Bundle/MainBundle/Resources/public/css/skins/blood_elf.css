@@ -1,0 +1,32 @@
+html {
+    height: auto;
+    min-width: 960px;
+}
+body {
+    height: 100%;
+}
+html,
+body {
+    background: #301507 url("/bundles/valkmain/images/backgrounds/0F7CCCB66D3E443A87295B7EA9840507BF725F38.jpg") no-repeat center -200px !important;
+}
+.header {
+    background: #301507 url("/bundles/valkmain/images/backgrounds/0F7CCCB66D3E443A87295B7EA9840507BF725F38.jpg") no-repeat center 0 !important;
+}
+@media (max-width: 1280px) {
+    html,
+    body {
+        background: #301507 url("/bundles/valkmain/images/backgrounds/46531EB23319816A105B545EE63251E663E3B648.jpg") no-repeat center -200px !important;
+    }
+    .header {
+        background: #301507 url("/bundles/valkmain/images/backgrounds/46531EB23319816A105B545EE63251E663E3B648.jpg") no-repeat center 0 !important;
+    }
+}
+@media (max-width: 1024px) {
+    html,
+    body {
+        background: #301507 url("/bundles/valkmain/images/backgrounds/A58E87437FE088C17B63C9B5BD70C0915A831D7D.jpg") no-repeat center -200px !important;
+    }
+    .header {
+        background: #301507 url("/bundles/valkmain/images/backgrounds/A58E87437FE088C17B63C9B5BD70C0915A831D7D.jpg") no-repeat center 0 !important;
+    }
+}

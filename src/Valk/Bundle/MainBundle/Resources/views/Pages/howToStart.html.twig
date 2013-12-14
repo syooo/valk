@@ -1,0 +1,66 @@
+{% extends 'ValkMainBundle::layout.html.twig' %}
+
+{% block breadcrumbs %}
+    {{ breadcrumbs.show({'How to Start': ''}) }}
+{% endblock %}
+
+{% block content %}
+<h1>How to start</h1>
+    <a href="http://db.valkyrie-wow.com/?account=signup" rel="nofollow"><img class="ximg" src="imgs/en_ca.png" alt="Create Account Valkyrie-wow"></a>
+    <h2>Step 1. Download the game client</h2>
+    <p>To play on our server, you must have the game client <b>World of Warcraft version 1.12.1 or 1.12.2</b>. You can download the installer, install the game, and then update it with patches <b>OR</b> download client is already installed, and unzip it.</p>
+    <br>
+    <p><b>WARNING!</b> If you downloaded the installer and you already have installed the game (Cataclysm for example), be sure to rename the folder in which it is located (such as "123", after installing the game and patches, rename the folder back).</p>
+    <br>
+    <img alt="World of Warcraft Windows" src="imgs/win.png">
+    <br>
+    <a rel="nofollow" target="_blank" href="https://drive.google.com/folderview?id=0ByPTNLduvdC2NzZCLWtNNVZoQ3M#list" onclick="window.open(this.href); return false;"><strong>Valkyrie-WoW-GoogleDrive</strong></a> - contain direct links to:
+    <ul class="allul">
+        <li><a rel="nofollow" target="_blank" href="http://drive.google.com/uc?id=0ByPTNLduvdC2RTREdWdlVHJudmc&amp;export=download" onclick="window.open(this.href); return false;">WoW_1.12.1_enGB_Ready.zip(Ready2Play)</a>,</li>
+        <li><a rel="nofollow" target="_blank" href="https://drive.google.com/uc?id=0ByPTNLduvdC2UFZ0Q1N0bFBzakU&amp;export=download" onclick="window.open(this.href); return false;">WoW_1.12.1_enGB_Install.zip</a>,</li>
+        <li>wow-1.12.1-to-1.12.2-engb-patch.zip.</li>
+        <li>Fonts.zip (adds support of cyrillic symbols in game chat),</li>
+        <li>WoW.zip (original clean installed game)</li>
+    </ul>
+    Press the icon with the file you need, then press the Down Arrow at right-down corner of the screen to download the file.
+    <br><br>
+    <p><b>Installer (2.5 GB)</b></p>
+    <ul class="allul">
+        <li><a rel="nofollow" target="_blank" href="http://rutracker.org/forum/viewtopic.php?t=2629654" onclick="window.open(this.href); return false;">rutracker.org (Torrent) + patches</a></li>
+    </ul>
+    <p><b>Patches (450 MB)</b></p>
+    <ul class="allul">
+        <li><b>1.x.x</b> up to <b>1.12.0</b> - <a rel="nofollow" target="_blank" href="http://www.fileplanet.com/165059/160000/fileinfo/World-of-Warcraft-Patch---v1.12-%5BFull-UK-English%5D" onclick="window.open(this.href); return false;">wow-1.12.0-engb-patch (HTTP)</a></li>
+        <li><b>1.12.0</b> up to <b>1.12.1</b> - <a rel="nofollow" target="_blank" href="http://www.fileplanet.com/168232/160000/fileinfo/World-of-Warcraft-Patch-v1.12---v1.12.1-%5BUK-English%5D" onclick="window.open(this.href); return false;">wow-1.12.0-to-1.12.1-engb (HTTP)</a></li>
+    </ul>
+    <p><b>Installed (5.2 GB)</b></p>
+    <ul class="allul">
+        <li><a rel="nofollow" target="_blank" href="http://thepiratebay.sx/torrent/5076223/World_of_Warcraft_Client_-_Version_1.12.1_enUS_-_Windows" onclick="window.open(this.href); return false;">thepiratebay.sx (Torrent)</a></li>
+    </ul>
+    <br>
+    <img alt="World of Warcraft Mac" src="imgs/mac.png">
+    <p><b>Installed (5.2 GB)</b></p>
+    <ul class="allul">
+        <li><a rel="nofollow" target="_blank" href="http://rutracker.org/forum/viewtopic.php?t=3452973" onclick="window.open(this.href); return false;">rutracker.org (Torrent)</a></li>
+        <li><a rel="nofollow" target="_blank" href="http://thepiratebay.sx/torrent/6288283/" onclick="window.open(this.href); return false;">thepiratebay.sx (Torrent)</a></li>
+    </ul>
+    <h2>Step 2. Configure the client</h2>
+    <p>Once you get ready client initially WoW 1.12.1 (in order to find out the version of your client, you need to run the client and look in the lower left corner), put this in the realm-list:</p>
+    <ol class="allul">
+        <li>Open the file with Notepad <b>realmlist.wtf</b> located in your game folder.</li>
+        <li>We lead contents of the file to the following look:</li>
+    </ol>
+    <b>set realmlist logon.valkyrie-wow.com</b>
+    <br><br>
+    <h2>Step 3. Register a game account</h2>
+    <a href="http://db.valkyrie-wow.com/?account=signup" rel="nofollow"><img class="ximg" src="imgs/en_ca.png" alt="Create Account Valkyrie-wow"></a>
+    <p>The administration of the server wishes you pleasant game..</p>
+    <br>
+    <img class="ximg" alt="Сервер классик вова - Valkyrie WoW Classic - 1.12.1 World of Warcraft Server" src="imgs/startmain.jpg">
+    <br><br>
+    <a href="http://valkyrie-wow.ru/" title="Welcome to Valkyrie WoW"><img src="imgs/ru.png" alt="Русский сайт"> Русский сайт</a>
+    <br><br>
+
+</div>
+
+{% endblock %}

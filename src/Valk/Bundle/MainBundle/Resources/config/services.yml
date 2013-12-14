@@ -5,3 +5,7 @@ services:
 #    valk_main.example:
 #        class: %valk_main.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+
+    valk.main.mangos_encoder:
+        class: Valk\Bundle\MainBundle\Service\MangosEncoder
