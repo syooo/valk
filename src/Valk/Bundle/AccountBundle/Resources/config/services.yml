@@ -1,0 +1,12 @@
+services:
+    valk.account.mangos_encoder:
+        class: Valk\Bundle\AccountBundle\Service\MangosEncoder
+
+    valk.account.user_manager:
+        class: Valk\Bundle\AccountBundle\Doctrine\UserManager
+        arguments: ["@security.encoder_factory", "@fos_user.util.username_canonicalizer", "@fos_user.util.email_canonicalizer","@fos_user.entity_manager",%fos_user.model.user.class%]
+
+    valk.account.user_provider:
+        class: "Valk\Bundle\AccountBundle\Security\UserProvider"
+        arguments:
+            - '@fos_user.user_manager'

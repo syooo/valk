@@ -106,11 +106,11 @@
         {% if is_granted('IS_AUTHENTICATED_FULLY') %}
             <li class="service-cell service-welcome">
                 Welcome, {{ app.user.username }}
-                |  <a href="{{ path('logout') }}" tabindex="50" accesskey="2">log out</a>
+                |  <a href="{{ path('fos_user_security_logout') }}" tabindex="50" accesskey="2">log out</a>
             </li>
         {% else %}
             <li class="service-cell service-welcome">
-                <a href="{{ path('login') }}" >Log in</a> or <a href="https://us.battle.net/account/creation/tos.html">Create an Account</a>
+                <a href="{{ path('fos_user_security_login') }}" >Log in</a> or <a href="{{ path('fos_user_registration_register') }}">Create an Account</a>
             </li>
         {% endif %}
 

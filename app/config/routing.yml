@@ -2,7 +2,14 @@ valk_main:
     resource: "@ValkMainBundle/Resources/config/routing.yml"
     prefix:   /
 
+valk_account:
+    resource: "@ValkAccountBundle/Resources/config/routing.yml"
+    prefix:   /
+
 valk_talent_calculator:
     resource: "@ValkTalentCalculatorBundle/Resources/config/routing.yml"
     prefix:   /
+
+
+
 

@@ -6,7 +6,7 @@
  * Time: 4:22
  */
 
-namespace Valk\Bundle\MainBundle\Service;
+namespace Valk\Bundle\AccountBundle\Service;
 
 use Doctrine\ORM\EntityNotFoundException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
