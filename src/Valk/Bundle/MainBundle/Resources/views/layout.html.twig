@@ -3,70 +3,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta http-equiv="imagetoolbar" content="false" />
 
-    <title>Valkyrie WoW - Classic World of Warcraft Server 1.12.1, 1.12.2</title>
-
-
     <link rel="shortcut icon" href="/shop/static/images/meta/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/shop/static/images/meta/favicon.png" type="image/png" />
 
+    <title>
+        {%- block title -%}
+        Valkyrie WoW - Classic World of Warcraft Server 1.12.1, 1.12.2
+        {%- endblock -%}
+    </title>
 
-    {% stylesheets filter='cssrewrite'
-        '@ValkMainBundle/Resources/public/css/common.min.css'
-        '@ValkMainBundle/Resources/public/css/toolkit.min.css'
-        '@ValkMainBundle/Resources/public/css/responsive.min.css'
-        '@ValkMainBundle/Resources/public/css/global.min.css'
-        '@ValkMainBundle/Resources/public/css/product.min.css'
-        '@ValkMainBundle/Resources/public/css/browse.min.css'
-        '@ValkMainBundle/Resources/public/css/bootstrap.css'
-        '@ValkMainBundle/Resources/public/css/valk.css'
-     %}
-        <link rel="stylesheet" href="{{ asset_url }}"/>
-    {% endstylesheets %}
+    {% block css %}
 
-    {#<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>#}
-
-
-    {% block skin %}
         {% stylesheets filter='cssrewrite'
-        '@ValkMainBundle/Resources/public/css/skins/lava.css'
-        %}
-        <link rel="stylesheet" href="{{ asset_url }}"/>
+            '@ValkMainBundle/Resources/public/css/common.min.css'
+            '@ValkMainBundle/Resources/public/css/toolkit.min.css'
+            '@ValkMainBundle/Resources/public/css/responsive.min.css'
+            '@ValkMainBundle/Resources/public/css/global.min.css'
+            '@ValkMainBundle/Resources/public/css/product.min.css'
+            '@ValkMainBundle/Resources/public/css/browse.min.css'
+            '@ValkMainBundle/Resources/public/css/bootstrap.css'
+            '@ValkMainBundle/Resources/public/css/valk.css'
+         %}
+            <link rel="stylesheet" href="{{ asset_url }}"/>
         {% endstylesheets %}
+
     {% endblock %}
-
-
-    <script src="/shop/static/local-common/js/core.min.js?v=58-1.2.10"></script>
-
-
-    <script type="text/javascript">
-        //<![CDATA[
-        var Core = Core || {},
-                Login = Login || {};
-        Core.staticUrl = '/shop/static';
-        Core.sharedStaticUrl = '/shop/static/local-common';
-        Core.baseUrl = '/shop/ru';
-        Core.projectUrl = '/shop';
-        Core.cdnUrl = 'http://media.blizzard.com';
-        Core.supportUrl = 'http://eu.battle.net/support/';
-        Core.secureSupportUrl = 'https://eu.battle.net/support/';
-        Core.project = 'shop';
-        Core.locale = 'ru-ru';
-        Core.language = 'ru';
-        Core.region = 'eu';
-        Core.shortDateFormat = 'dd/MM/yyyy';
-        Core.dateTimeFormat = 'dd/MM/yyyy HH:mm';
-        Core.loggedIn = false;
-        Core.userAgent = 'web';
-        Login.embeddedUrl = 'https://eu.battle.net/login/login.frag';
-        var Flash = Flash || {};
-        Flash.videoPlayer = 'http://media.blizzard.com/global-video-player/themes/shop/video-player.swf';
-        Flash.videoBase = 'http://media.blizzard.com/shop/media/videos';
-        Flash.ratingImage = 'http://media.blizzard.com/global-video-player/ratings/shop/ru-ru.jpg';
-        Flash.expressInstall = 'http://media.blizzard.com/global-video-player/expressInstall.swf';
-
-        //]]>
-    </script>
-
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Магазин Battle.net" />
@@ -81,14 +42,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body class="browse-template">
-<script>
-    //<![CDATA[
-    (function() {
-        var body = document.getElementsByTagName("body")[0];
-        body.className = body.className + " js-enabled";
-    })();
-    //]]>
-</script>
+
 
 <header class="header">
 <div class="header-primary">
@@ -177,20 +131,8 @@
 
         {% endblock %}
 
-
-
-
 </div>
-<script>
-    //<![CDATA[
-    $(function () {
-        $('#hero-carousel').carousel();
-        if (typeof _gaq !== 'undefined') {
-            _gaq.push(['_trackPageview', '/shop/ru/']);
-        }
-    });
-    //]]>
-</script>
+
 <footer class="footer">
     <div class="container">
         <div id="sitemap">
@@ -264,10 +206,10 @@
                         <span>Европа - Русский</span>
                     </a>
 <span class="legal-links">
-<a onclick="return Core.open(this);" href="http://eu.blizzard.com/company/about/termsofuse.html" tabindex="100" data-action="Footer - Terms of Use">Пользовательское соглашение</a>
-<a onclick="return Core.open(this);" href="http://eu.blizzard.com/company/legal/" tabindex="100" data-action="Footer - Legal">Соглашения</a>
-<a onclick="return Core.open(this);" href="http://eu.blizzard.com/company/about/privacy.html" tabindex="100" data-action="Footer - Privacy Policy">Политика конфиденциальности</a>
-<a onclick="return Core.open(this);" href="http://eu.blizzard.com/company/about/infringementnotice.html" tabindex="100" data-action="Footer - Copyright Infringement">Авторское право</a>
+<a href="http://eu.blizzard.com/company/about/termsofuse.html" tabindex="100" data-action="Footer - Terms of Use">Пользовательское соглашение</a>
+<a href="http://eu.blizzard.com/company/legal/" tabindex="100" data-action="Footer - Legal">Соглашения</a>
+<a href="http://eu.blizzard.com/company/about/privacy.html" tabindex="100" data-action="Footer - Privacy Policy">Политика конфиденциальности</a>
+<a href="http://eu.blizzard.com/company/about/infringementnotice.html" tabindex="100" data-action="Footer - Copyright Infringement">Авторское право</a>
 <a target="_blank" href="http://eu.blizzard.com/company/about/contact.html" tabindex="100">Контакты</a>
 </span>
                     © Blizzard Entertainment, 2013 г. Все права защищены.
@@ -284,95 +226,40 @@
                 <div class="marketing-cover"></div>
             </div>
         </div>
-        <script type="text/javascript">
-            //<![CDATA[
-            $(function() {
-                var category = Core.project + ' - Footer Navigation';
-                Core.bindTrackEvent('#sitemap a', category);
-                Core.bindTrackEvent('#copyright a[data-action]', category);
-            });
-            //]]>
-        </script>
+
     </div>
 </footer>
-<script>
+
+{% block js %}
+
+    <script>
     //<![CDATA[
-    if (typeof Msg === "undefined") {
-        var Msg = {};
-    }
+    (function() {
+        var body = document.getElementsByTagName("body")[0];
+        body.className = body.className + " js-enabled";
+    })();
     //]]>
-</script>
-<script>
-    //<![CDATA[
-    var xsToken = '';
-    var supportToken = '';
-    var jsonSearchHandlerUrl = '//eu.battle.net';
-    var Msg = Msg || {};
-    Msg.analytics = {
-        account: 'UA-544112-16',
-        domainName: '.battle.net',
-        pageUrl: '/shop/ru/',
-        eventPrefix: '',
-        pagePrefix: '',
-        pageSuffix: ''
-    };
-    Msg.support = {
-        ticketNew: 'Открыт запрос № {0}.',
-        ticketStatus: 'Запросу № {0} присвоен статус «{1}».',
-        ticketOpen: 'Открыт',
-        ticketAnswered: 'Дан ответ',
-        ticketResolved: 'Разрешен',
-        ticketCanceled: 'Отменен',
-        ticketArchived: 'Перемещен в архив',
-        ticketInfo: 'Уточнить',
-        ticketAll: 'Все запросы'
-    };
-    Msg.ui= {
-        submit: 'Отправить',
-        cancel: 'Отмена',
-        reset: 'Сброс',
-        viewInGallery: 'Галерея',
-        loading: 'Подождите, пожалуйста.',
-        unexpectedError: 'Произошла ошибка.',
-        fansiteFind: 'Найти на…',
-        fansiteFindType: '{0}: поиск на…',
-        fansiteNone: 'Нет доступных сайтов.',
-        flashErrorHeader: 'Необходимо установить Adobe Flash Player.',
-        flashErrorText: 'Загрузить Adobe Flash Player',
-        flashErrorUrl: 'http://get.adobe.com/flashplayer/',
-        save: 'Сохранить'
-    };
-    Msg.grammar= {
-        colon: '{0}:',
-        first: 'Первая стр.',
-        last: 'Последняя стр.',
-        ellipsis: '…'
-    };
-    Msg.search= {
-        noResults: 'Нет результатов для отображения',
-        kb: 'Поддержка',
-        post: 'Форумы',
-        article: 'Статьи',
-        static: 'Материалы',
-        wowcharacter: 'Персонаж',
-        wowitem: 'Предмет',
-        wowguild: 'Гильдии',
-        wowarenateam: 'Команды Арены',
-        url: 'Вам может быть интересно',
-        friend: 'Друзья',
-        product: 'Продукция',
-        other: 'Другое'
-    };
-    //]]>
-</script>
+    </script>
 
+    {#
+    <script>
+        //<![CDATA[
+        $(function () {
+            $('#hero-carousel').carousel();
+        });
+        //]]>
+    </script>
+    #}
 
-<!--
-<script src="/shop/static/js/toolkit/toolkit.min.js?v=58-1.2.10"></script>
-<script type="text/javascript" src="/shop/static/js/global/global.min.js?v=58-1.2.10"></script>
-<script src="/shop/static/js/legal/legal.min.js?v=58-1.2.10"></script>
--->
+{% endblock %}
 
+{% block skin %}
+    {% stylesheets filter='cssrewrite'
+    '@ValkMainBundle/Resources/public/css/skins/lava.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
 
 <div id="ajax-indicator" class="ajax-indicator"></div>
 </body>
