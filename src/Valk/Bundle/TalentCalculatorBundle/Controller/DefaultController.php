@@ -34,6 +34,8 @@ class DefaultController extends Controller
         );
     }
 
+    // TODO: Прописать в классе плеера.
+
     /**
      * @param $id
      * @return null|string

@@ -1,19 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="Keywords"
-          content="WoW, World of Warcraft, WoW Provider, WoWProvider, WoW Class talents, Talente, Talents, Talent Calculator, Talent Rechner"/>
-    <meta name="description" content="World of Warcraft Resource - Uptodate Talent Calculator in every language"/>
+{% extends 'ValkMainBundle::layout.html.twig' %}
 
-    <title>
-        Warrior (1.12.2.6005) Talent Calculator
-    </title>
+{% block breadcrumbs %}
+    {{ breadcrumbs.show({'Talent Calculator': ''}) }}
+{% endblock %}
+
+{% block title %}
+    {{ className }} (1.12.2.6005) Talent Calculator {{ parent() }}
+{% endblock %}
+
+{% block css %}
+
+    {{ parent() }}
 
     {% stylesheets '@ValkTalentCalculatorBundle/Resources/public/css/*'  filter='cssrewrite' %}
     <link rel="stylesheet" href="{{ asset_url }}"/>
     {% endstylesheets %}
+
+{% endblock %}
+
+{% block js %}
+
+    {{ parent() }}
 
     {% javascripts '@ValkTalentCalculatorBundle/Resources/public/js/*' %}
     <script src="{{ asset_url }}"></script>
@@ -34,8 +41,12 @@
         var BLANK_IMAGE = "{{ asset('bundles/valktalentcalculator/images/spacer.gif') }}";
     </script>
 
-</head>
-<body>
+{% endblock %}
+
+
+
+{% block content %}
+
 
 <div class="contentarea" id="contentarea">
 
@@ -150,47 +161,6 @@
 </div>
 
 
-
-</div>
-
-
-<div style="background-image:url({{ asset('bundles/valktalentcalculator/images/talent/header.png') }}); width:1082px; height:50px;">
-    <table border="0" cellpadding="0" cellspacing="0" style="height:50px;">
-        <tr>
-            <td style="width:3px;"></td>
-            <td style="width:43px;" valign="middle"><img
-                        src="{{ asset('bundles/valktalentcalculator/images/talent/' ~ className ~ '.png') }}" border="0"
-                        width="43" height="43"
-                        alt="{{ className }}"/></td>
-            <td style="width:3px;"></td>
-            <td style="width:250px;"><span class="class{{ className }}">{{ className }}</span><br/><span
-                        class="buildText">1.12.2.6005</span></td>
-            <td>
-                <table border="0" cellpadding="0" cellspacing="0">
-                    <tr>
-                        <td><span class="textLabel" id="linkThisBuild">Link this build: </span></td>
-
-                    </tr>
-                    <tr>
-                        <td colspan="2"><input id="buildText" onfocus="javascript:selectBuildText();" type="text"
-                                               style="width:770px;"/></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-</div>
-<div id="talentcontainer">
-<div class="cb">
-<table width="1082" border="0" cellspacing="0" cellpadding="0" align="left">
-<tr>
-<td width="300" height="480" valign="top"
-    style="background-image: url({{ asset('bundles/valktalentcalculator/images/talent/sidebar.jpg') }}); background-repeat:no-repeat; background-color:#000000;">
-    <table border="0" cellpadding="10" cellspacing="2" width="100%">
-        <tr>
-            <td>
-                <br/>
-
                 <div id="viewright">
                     <img src="{{ asset('bundles/valktalentcalculator/images/talent/point.gif') }}" border="0"
                          alt=""/><span class="textLabel" id="lblPointsLeft">Points left: </span><span
@@ -204,12 +174,27 @@
 
                     <br/>
 
+                    <span class="textLabel" id="linkThisBuild">Link this build: </span>
+                    <input id="buildText" onfocus="javascript:selectBuildText();" type="text"
+                           style="width:770px;"/>
+
+                    <img
+                            src="{{ asset('bundles/valktalentcalculator/images/talent/' ~ className ~ '.png') }}" border="0"
+                            width="43" height="43"
+                            alt="{{ className }}"/>
+
+                    <span class="class{{ className }}">{{ className }}</span><br/><span
+                            class="buildText">1.12.2.6005</span>
+
                 </div>
 
-            </td>
-        </tr>
-    </table>
-</td>
+
+
+<div id="talentcontainer">
+<div class="cb">
+<table width="900" style="" border="0" cellspacing="0" cellpadding="0" align="left">
+<tr>
+
 <td valign="top">
 
 <table width="900" border="0" cellspacing="0" cellpadding="0" align="left">
@@ -802,7 +787,7 @@
     </table>
 </div>
 </div>
+</div>
 
 
-</body>
-</html>
+{% endblock %}

@@ -1,16 +1,16 @@
 valk_talent_calculator_with_class_with_build:
-    pattern:  /calculator/{class}/{build}
+    pattern:  /talents/{class}/{build}
     defaults:
       _controller: ValkTalentCalculatorBundle:Default:index
 
 valk_talent_calculator_with_class:
-    pattern:  /calculator/{class}/
+    pattern:  /talents/{class}/
     defaults:
       _controller: ValkTalentCalculatorBundle:Default:index
       build: ""
 
 valk_talent_calculator:
-    pattern:  /calculator/
+    pattern:  /talents/
     defaults:
       _controller: ValkTalentCalculatorBundle:Default:index
       build: ""
