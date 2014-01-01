@@ -28,8 +28,6 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-    globals:
-        is_front: false
 
 # Assetic Configuration
 assetic:

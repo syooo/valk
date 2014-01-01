@@ -15,8 +15,6 @@ class PagesController extends Controller
      */
     public function indexAction()
     {
-        $this->get('twig')->addGlobal('is_front', true);
-
         return array();
     }
 

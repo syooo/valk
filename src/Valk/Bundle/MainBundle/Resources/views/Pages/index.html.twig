@@ -3,7 +3,7 @@
 
 {% block skin %}
     {% stylesheets filter='cssrewrite'
-    '@ValkMainBundle/Resources/public/css/skins/blood_elf.css'
+    '@ValkMainBundle/Resources/public/css/skins/family.css'
     %}
     <link rel="stylesheet" href="{{ asset_url }}"/>
     {% endstylesheets %}
@@ -12,6 +12,7 @@
 
 
 {% block content %}
+    <div class="container home">
 
     <div class="row">
 <div class="span6 sidebar">
@@ -256,7 +257,7 @@
 
 <div class="main-page-content">
 
-    <h2 class="heading-1 product-features-header">Welcome to Valkyrie WoW</h2>
+    <h2 class="heading-1 product-features-header">Why Valkyrie?</h2>
 
 
     <p class="product-features-description">Valkyrie wow (2009-2014) is an international server, our server is hosted in France. We can provide you of a 99% Vanilla blizzlike feeling in dungeons, raids, battlegrounds, spells and many more!</p>
@@ -269,9 +270,9 @@
                 <img class="product-feature-image" src="https://bnetproducteu-a.akamaihd.net//dg/244/4ACBC323953CE16732ABF7F274E2AB17668D04D4.jpg" />
                 <div class="img-overlay"></div>
             </div>
-            <h3 class="product-feature-headline heading-3">Awesome Dev Team
+            <h3 class="product-feature-headline heading-3">Frequent updates and fixes
             </h3>
-                <p class="product-feature-description">Our server is running on our own designed core Anathema, running patch 1.12.1. With over 2400 uniq fixes our realm is one of the greatest and active well scripted servers.
+                <p class="product-feature-description">Our server is running on our own designed core Anathema, running patch 1.12.1. With over 2400 uniq patches our realm is one of the greatest and active well scripted servers.
             </p>
         </div>
         <div class="span8 product-feature">
@@ -294,6 +295,18 @@
             <p class="product-feature-description">Anticheat system <a rel="nofollow" target="_blank" href="http://ru.wikipedia.org/wiki/Blizzard_Entertainment#Warden_Client"><strong>Warden</strong></a>!
             </p>
         </div>
+        <div class="span8 product-feature">
+            <div class="product-feature-image-wrapper">
+                <img class="product-feature-image" src="https://bnetproducteu-a.akamaihd.net//dg/244/1798ED13BA11CC06D67644B83D4F31B31BC9A6BE.jpg" />
+                <div class="img-overlay"></div>
+            </div>
+            <h3 class="product-feature-headline heading-3">No gamebreaking donation rewards
+            </h3>
+            <p class="product-feature-description">
+                We do not sell tier sets and...
+            </p>
+        </div>
+
     </div>
 
 
@@ -303,10 +316,8 @@
 
 
         <li>4 years of stable work.</li>
-        <li>No gamebreaking donation rewards.</li>
         <li>Blizzlike hand-made honor system.</li>
 
-        <li>Frequent updates and fixes.</li>
 
         <li>Hand-made Blizzlike: BWL, MC, ZG, Onyxia, Strat, Scholo, Dire Maul, BRD, UBRS, LBRS.</li>
     </ul>
@@ -315,11 +326,10 @@
     <br><br>
     <img class="ximg" alt="Сервер классик вова - Valkyrie WoW Classic - 1.12.1 World of Warcraft Server" src="imgs/main.jpg">
     <br><br>
-    <a href="http://valkyrie-wow.ru/" title="Welcome to Valkyrie WoW"><img src="imgs/ru.png" alt="Русский сайт"> Русский сайт</a>
-    <br><br>
+
 </div>
 
 </div>
 </div>
-
+</div>
 {% endblock %}

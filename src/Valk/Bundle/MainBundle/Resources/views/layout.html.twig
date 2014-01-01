@@ -50,7 +50,7 @@
 <h1 class="heading-3 shop-logo">
     <a href="{{ path('valk_main_homepage') }}">
         Valkyrie WoW
-        <span class="beta-tag">Classic 1.12.2</span>
+        <span class="beta-tag">Vanilla 1.12.2</span>
     </a>
 </h1>
 
@@ -125,13 +125,12 @@
 </header>
 
 
-<div class="container {% if is_front %}home{% else %}product-template{% endif %}">
 
-        {% block content %}
 
-        {% endblock %}
+{% block content %}
 
-</div>
+{% endblock %}
+
 
 <footer class="footer">
     <div class="container">
