@@ -17,9 +17,14 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Valk\Bundle\TalentCalculatorBundle\ValkTalentCalculatorBundle(),
-            new Valk\Bundle\MainBundle\ValkMainBundle(),
-            new Valk\Bundle\AccountBundle\ValkAccountBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
+            //new Valk\Bundle\MainBundle\ValkMainBundle(),
+            //new Valk\Bundle\AccountBundle\ValkAccountBundle(),
+            //new FOS\UserBundle\FOSUserBundle(),
+            new Valk\WowBundle\ValkWowBundle(),
+            new Valk\MainBundle\ValkMainBundle(),
+            new Valk\AccountBundle\ValkAccountBundle(),
+            new Valk\ArmoryBundle\ValkArmoryBundle(),
+            new Valk\DatabaseBundle\ValkDatabaseBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

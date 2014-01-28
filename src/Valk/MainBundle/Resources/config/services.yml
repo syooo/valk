@@ -1,0 +1,7 @@
+parameters:
+#    valk_main.example.class: Valk\MainBundle\Example
+
+services:
+#    valk_main.example:
+#        class: %valk_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
