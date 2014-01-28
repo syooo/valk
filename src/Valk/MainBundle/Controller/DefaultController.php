@@ -3,11 +3,18 @@
 namespace Valk\MainBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\Security\Core\SecurityContext;
+use Valk\Bundle\MainBundle\Service;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @template()
+     */
+    public function indexAction()
     {
-        return $this->render('ValkMainBundle:Default:index.html.twig', array('name' => $name));
+        return array();
     }
 }

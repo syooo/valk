@@ -48,7 +48,7 @@
 <div class="header-primary">
 <div class="container" style="position: relative;">
 <h1 class="heading-3 shop-logo">
-    <a href="{{ path('valk_main_homepage') }}">
+    <a href="{{ path('_welcome') }}">
         Valkyrie WoW
         <span class="beta-tag">Vanilla 1.12.2</span>
     </a>
@@ -126,10 +126,11 @@
 
 
 
+<div class="container home">
+    {% block content %}
 
-{% block content %}
-
-{% endblock %}
+    {% endblock %}
+</div>
 
 
 <footer class="footer">
