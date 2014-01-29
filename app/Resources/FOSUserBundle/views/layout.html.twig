@@ -1,7 +1,26 @@
 {% extends 'layout.html.twig' %}
 
-{% block title %}Valkyrie{% endblock %}
+{% block skin %}
+    {% stylesheets filter='cssrewrite'
+    '@ValkMainBundle/Resources/public/css/skins/ice.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+{% endblock %}
 
 {% block content %}
-    {% block fos_user_content %}{% endblock %}
+    <div class="container home">
+        {% for type, messages in app.session.flashbag.all() %}
+            {% for message in messages %}
+                <div class="flash-{{ type }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+        <div>
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+    </div>
 {% endblock %}
