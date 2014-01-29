@@ -7,7 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Security\Core\SecurityContext;
 use Valk\Bundle\MainBundle\Service;
 
-class DefaultController extends Controller
+class StaticController extends Controller
 {
     /**
      * @return \Symfony\Component\HttpFoundation\Response
