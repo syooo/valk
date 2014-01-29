@@ -1,3 +1,3 @@
 valk_wow_homepage:
     pattern:  /hello/{name}
-    defaults: { _controller: ValkWowBundle:Default:index }
+    defaults: { _controller: ValkWowBundle:Static:index }

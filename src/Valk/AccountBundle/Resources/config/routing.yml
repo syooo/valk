@@ -1,3 +1,3 @@
 valk_account_homepage:
     pattern:  /hello/{name}
-    defaults: { _controller: ValkAccountBundle:Default:index }
+    defaults: { _controller: ValkAccountBundle:Static:index }

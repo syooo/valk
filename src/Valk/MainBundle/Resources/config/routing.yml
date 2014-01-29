@@ -1,6 +1,6 @@
 valk_main_homepage:
     pattern:  /
-    defaults: { _controller: ValkMainBundle:Default:index }
+    defaults: { _controller: ValkMainBundle:Static:index }
 valk_main_how_to_start:
     pattern:  /start/
-    defaults: { _controller: ValkMainBundle:Default:howToStart }
+    defaults: { _controller: ValkMainBundle:Static:howToStart }

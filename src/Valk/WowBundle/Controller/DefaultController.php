@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction($name)
     {
-        return $this->render('ValkWowBundle:Default:index.html.twig', array('name' => $name));
+        return $this->render('ValkWowBundle:Static:index.html.twig', array('name' => $name));
     }
 }
