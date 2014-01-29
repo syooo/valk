@@ -28,6 +28,19 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        urls:
+            en:
+                ru_site: /
+                forum: http://valkyrie-wow.com/boards/
+                armory: http://valkyrie-wow.com/armory/
+                db: http://db.valkyrie-wow.com/
+                bug_tracker: http://valkyrie-wow.com/boards/index.php?showforum=11
+                talent_calculator: http://valkyrie-wow.com/armory/tool/talentCalculator/class/1
+                rules: http://valkyrie-wow.com/boards/index.php?showtopic=42
+                aq_event: http://valkyrie-wow.com/wareffort/?lang=eng
+                changelog: http://valkyrie-wow.com/boards/index.php?showforum=42
+                donation: http://valkyrie-wow.com/boards/index.php?showtopic=825
 
 # Assetic Configuration
 assetic:

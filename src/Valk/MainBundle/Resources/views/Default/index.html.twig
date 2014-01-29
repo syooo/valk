@@ -21,23 +21,23 @@
                 </a>
             </li>
             <li>
-                <a href="/shop/ru/product/game/wow">
+                <a href="{{ path('fos_user_registration_register') }}">
                     <span class="glyphicon glyphicon-plus"></span> Create Account
                 </a>
             </li>
 
             <li>
-                <a href="/shop/ru/product/game/starcraft">
+                <a href="{{ attribute(urls, app.request.locale).forum }}">
                     <span class="glyphicon glyphicon-comment"></span> Boards
                 </a>
             </li>
             <li>
-                <a href="/shop/ru/product/game/battle-net">
+                <a href="#account">
                     <span class="glyphicon glyphicon-user"></span> Account
                 </a>
             </li>
             <li>
-                <a href="/shop/ru/product/game/hearthstone">
+                <a href="{{ attribute(urls, app.request.locale).armory }}">
                     <span class="glyphicon glyphicon-tower"></span> Armory
                 </a>
             </li>
@@ -46,50 +46,49 @@
         <h2 class="heading-6 browse-by-type">{{ 'Navigation'|trans }}</h2>
         <ul class="product-types">
             <li>
-                <a href="/shop/ru/product/category/digital-games">
-                    Control Panel
+                <a href="{{ attribute(urls, app.request.locale).aq_event }}">
+                    AQ War Effort
+                    <span class="product-count">(79%)</span>
                 </a>
             </li>
             <li>
-                <a href="/shop/ru/product/category/game-time">
-                    Подписка
-                    <span class="product-count">(1)</span>
+                <a href="#Banlist">
+                    Banlist
                 </a>
             </li>
             <li>
-                <a href="/shop/ru/product/category/pets">
-                    Питомцы
-                    <span class="product-count">(11)</span>
+                <a href="{{ attribute(urls, app.request.locale).donation }}">
+                    Donation
                 </a>
             </li>
             <li>
-                <a href="/shop/ru/product/category/mounts">
-                    Средства передвижения
-                    <span class="product-count">(6)</span>
+                <a href="{{ attribute(urls, app.request.locale).changelog }}">
+                    Changelog
                 </a>
             </li>
             <li>
-                <a href="/shop/ru/product/category/helms">
-                    Шлемы
-                    <span class="product-count">(3)</span>
+                <a href="{{ attribute(urls, app.request.locale).bug_tracker }}">
+                    Bug Tracker
                 </a>
             </li>
             <li>
-                <a href="/shop/ru/product/category/game-services">
-                    Внутриигровые услуги
-                    <span class="product-count">(10)</span>
+                <a href="{{ attribute(urls, app.request.locale).talent_calculator }}">
+                    Talent Calculator
                 </a>
             </li>
             <li>
-                <a href="/shop/ru/product/battlenet-balance">
-                    Кошелек Battle.net
+                <a href="{{ attribute(urls, app.request.locale).rules }}">
+                    Server Rules
                 </a>
             </li>
+
         </ul>
+        {# }
         <div class="sidebar-links">
             <p><a href="http://eu.battle.net/account/management/claim-code.html" rel="external" target="_blank">Использовать
                     код <i class="icon icon-external-link"></i></a></p>
         </div>
+        #}
     </div>
 
 
@@ -332,11 +331,8 @@
             <li>Hand-made Blizzlike: BWL, MC, ZG, Onyxia, Strat, Scholo, Dire Maul, BRD, UBRS, LBRS.</li>
         </ul>
         <br>
-        <a href="./start" rel="nofollow"><img class="ximg" src="imgs/en_sp.png" alt="Начать играть на Valkyrie-wow"></a>
-        <br><br>
-        <img class="ximg" alt="Сервер классик вова - Valkyrie WoW Classic - 1.12.1 World of Warcraft Server"
-             src="imgs/main.jpg">
-        <br><br>
+        <a href="{{ path('valk_main_how_to_start') }}" rel="nofollow">Начать играть</a>
+
 
     </div>
 

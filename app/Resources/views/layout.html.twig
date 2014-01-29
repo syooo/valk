@@ -69,16 +69,16 @@
         {% endif %}
 
         <li class="service-cell service-shop">
-            <a href="https://us.battle.net/shop/" class="service-link" data-action="Shop">Account</a>
+            <a href="#account" class="service-link" data-action="Shop">Account</a>
         </li>
         <li class="service-cell service-shop">
-            <a href="https://us.battle.net/shop/" class="service-link" data-action="Shop">Armory</a>
+            <a href="{{ attribute(urls, app.request.locale).armory }}" class="service-link" data-action="Shop">Armory</a>
         </li>
         <li class="service-cell service-shop">
-            <a href="https://us.battle.net/shop/" class="service-link" data-action="Shop">Database</a>
+            <a href="{{ attribute(urls, app.request.locale).db }}" class="service-link" data-action="Shop">Database</a>
         </li>
         <li class="service-cell service-account">
-            <a href="https://us.battle.net/account/management/" class="service-link" tabindex="50" accesskey="3" data-action="Account">Boards</a>
+            <a href="{{ attribute(urls, app.request.locale).forum }}" class="service-link" tabindex="50" accesskey="3" data-action="Account">Boards</a>
         </li>
 
 
@@ -135,7 +135,7 @@
 
 <footer class="footer">
     <div class="container">
-        <div id="sitemap">
+        <!--<div id="sitemap">
             <div class="column">
                 <h3 class="bnet">
                     <a href="http://eu.battle.net/" tabindex="100" data-action="Battle.net Home - Battle.net Home">Battle.net</a>
@@ -197,33 +197,22 @@
                     <li><a href="http://blizzard.com/company/careers/faq.html" data-action="Jobs - Вопросы и ответы">Вопросы и ответы</a></li>
                 </ul>
             </div>
-            <span class="clear"><!-- --></span>
-        </div>
+            <span class="clear"></span>
+        </div>-->
         <div class="lower-footer-wrapper">
             <div class="lower-footer">
                 <div id="copyright">
-                    <a href="javascript:;" tabindex="100" id="change-language">
-                        <span>Европа - Русский</span>
+                    <a href="{{ attribute(urls, app.request.locale).ru_site }}" tabindex="100" id="change-language">
+                        <span>Русский</span>
                     </a>
 <span class="legal-links">
-<a href="http://eu.blizzard.com/company/about/termsofuse.html" tabindex="100" data-action="Footer - Terms of Use">Пользовательское соглашение</a>
-<a href="http://eu.blizzard.com/company/legal/" tabindex="100" data-action="Footer - Legal">Соглашения</a>
-<a href="http://eu.blizzard.com/company/about/privacy.html" tabindex="100" data-action="Footer - Privacy Policy">Политика конфиденциальности</a>
-<a href="http://eu.blizzard.com/company/about/infringementnotice.html" tabindex="100" data-action="Footer - Copyright Infringement">Авторское право</a>
-<a target="_blank" href="http://eu.blizzard.com/company/about/contact.html" tabindex="100">Контакты</a>
+<a href="{{ attribute(urls, app.request.locale).rules }}" tabindex="100" data-action="Footer - Terms of Use">Server Rules</a>
+<a href="#contacts" tabindex="100">Contacts</a>
 </span>
-                    © Blizzard Entertainment, 2013 г. Все права защищены.
+                    © Valkyrie WoW, {{ "now"|date('Y') }}
                 </div>
-                <div id="international"></div>
                 <div id="legal">
-                    <div id="blizzard" class="png-fix">
-                        <a href="http://eu.blizzard.com/" tabindex="100"><img src="/shop/static/images/logos/blizzard.png?v=58-1.2.10" alt="" /></a>
-                    </div>
-                    <span class="clear"><!-- --></span>
                 </div>
-            </div>
-            <div id="marketing-trackers">
-                <div class="marketing-cover"></div>
             </div>
         </div>
 
