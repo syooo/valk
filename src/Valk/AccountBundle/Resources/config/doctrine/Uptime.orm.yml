@@ -1,0 +1,38 @@
+Valk\AccountBundle\Entity\Uptime:
+    type: entity
+    table: uptime
+    id:
+        realmid:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+        starttime:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+            id: true
+    fields:
+        startstring:
+            type: string
+            nullable: false
+            length: 64
+            fixed: false
+            comment: ''
+            default: ''
+        uptime:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+        maxplayers:
+            type: smallint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+    lifecycleCallbacks: {  }

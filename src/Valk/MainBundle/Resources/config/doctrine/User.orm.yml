@@ -1,8 +1,12 @@
 Valk\MainBundle\Entity\User:
     type: entity
-    table: fos_user
+    table: users
     id:
         id:
             type: integer
             generator:
                 strategy: AUTO
+    oneToMany:
+        user_accounts:
+            targetEntity: Valk\MainBundle\Entity\UserAccount
+            mappedBy: user

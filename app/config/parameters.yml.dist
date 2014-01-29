@@ -6,6 +6,13 @@ parameters:
     database_user:     root
     database_password: ~
 
+    realmd_driver:     pdo_mysql
+    realmd_host:       127.0.0.1
+    realmd_port:       ~
+    realmd_name:       realmd
+    realmd_user:       root
+    realmd_password:   ~
+
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
     mailer_user:       ~

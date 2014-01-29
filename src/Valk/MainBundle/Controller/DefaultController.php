@@ -17,4 +17,13 @@ class DefaultController extends Controller
     {
         return array();
     }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @template()
+     */
+    public function howToStartAction()
+    {
+        return array();
+    }
 }

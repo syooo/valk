@@ -1,0 +1,16 @@
+Valk\MainBundle\Entity\UserAccount:
+    type: entity
+    table: user_accounts
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        user:
+            targetEntity: Valk\MainBundle\Entity\User
+            inversedBy: user_accounts
+            joinColumn:
+                name: user_id
+                referencedColumnName: id

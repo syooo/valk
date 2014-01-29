@@ -1,0 +1,28 @@
+Valk\AccountBundle\Entity\Realmcharacters:
+    type: entity
+    table: realmcharacters
+    indexes:
+        acctid:
+            columns:
+                - acctid
+    id:
+        realmid:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+            id: true
+        acctid:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+    fields:
+        numchars:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+    lifecycleCallbacks: {  }

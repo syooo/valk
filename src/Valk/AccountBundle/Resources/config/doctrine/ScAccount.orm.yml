@@ -1,0 +1,120 @@
+Valk\AccountBundle\Entity\ScAccount:
+    type: entity
+    table: sc_account
+    indexes:
+        idx_gmlevel:
+            columns:
+                - gmlevel
+    uniqueConstraints:
+        idx_username:
+            columns:
+                - username
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: Identifier
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        username:
+            type: string
+            nullable: false
+            length: 32
+            fixed: false
+            comment: ''
+            default: ''
+        shaPassHash:
+            type: string
+            nullable: false
+            length: 40
+            fixed: false
+            comment: ''
+            default: ''
+            column: sha_pass_hash
+        gmlevel:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+        sessionkey:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        v:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        s:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        email:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+        joindate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: CURRENT_TIMESTAMP
+        lastIp:
+            type: string
+            nullable: false
+            length: 30
+            fixed: false
+            comment: ''
+            default: 0.0.0.0
+            column: last_ip
+        failedLogins:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+            column: failed_logins
+        locked:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+        lastLogin:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: '0000-00-00 00:00:00'
+            column: last_login
+        activeRealmId:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+            column: active_realm_id
+        expansion:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+        mutetime:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+        locale:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+    lifecycleCallbacks: {  }

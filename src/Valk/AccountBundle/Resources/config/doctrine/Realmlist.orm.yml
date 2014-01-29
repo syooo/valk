@@ -1,0 +1,80 @@
+Valk\AccountBundle\Entity\Realmlist:
+    type: entity
+    table: realmlist
+    uniqueConstraints:
+        idx_name:
+            columns:
+                - name
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 32
+            fixed: false
+            comment: ''
+            default: ''
+        address:
+            type: string
+            nullable: false
+            length: 32
+            fixed: false
+            comment: ''
+            default: 127.0.0.1
+        port:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '8085'
+        icon:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+        color:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '2'
+        timezone:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+        allowedsecuritylevel:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '0'
+            column: allowedSecurityLevel
+        population:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            comment: ''
+            default: '0'
+        realmbuilds:
+            type: string
+            nullable: false
+            length: 64
+            fixed: false
+            comment: ''
+            default: ''
+        revision:
+            type: string
+            nullable: false
+            length: 5
+            fixed: false
+            comment: ''
+            default: ''
+    lifecycleCallbacks: {  }

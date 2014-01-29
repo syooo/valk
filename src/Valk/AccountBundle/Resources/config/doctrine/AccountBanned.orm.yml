@@ -1,0 +1,43 @@
+Valk\AccountBundle\Entity\AccountBanned:
+    type: entity
+    table: account_banned
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: 'Account id'
+            default: '0'
+            id: true
+        bandate:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            id: true
+    fields:
+        unbandate:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+        bannedby:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+        banreason:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+        active:
+            type: boolean
+            nullable: false
+            comment: ''
+            default: '1'
+    lifecycleCallbacks: {  }

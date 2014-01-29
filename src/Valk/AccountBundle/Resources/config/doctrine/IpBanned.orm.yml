@@ -1,0 +1,39 @@
+Valk\AccountBundle\Entity\IpBanned:
+    type: entity
+    table: ip_banned
+    id:
+        ip:
+            type: string
+            nullable: false
+            length: 32
+            fixed: false
+            comment: ''
+            default: 0.0.0.0
+            id: true
+        bandate:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+    fields:
+        unbandate:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+        bannedby:
+            type: string
+            nullable: false
+            length: 50
+            fixed: false
+            comment: ''
+            default: '[Console]'
+        banreason:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            default: 'no reason'
+    lifecycleCallbacks: {  }
