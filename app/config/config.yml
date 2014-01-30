@@ -46,7 +46,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ValkTalentCalculatorBundle, ValkMainBundle, ValkAccountBundle, FOSUserBundle]
+    bundles:        [ValkTalentCalculatorBundle, ValkMainBundle, ValkAccountBundle, ValkUserBundle]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
@@ -92,6 +92,7 @@ doctrine:
                 mappings:
                     ValkMainBundle: ~
                     ValkWowBundle: ~
+                    ValkUserBundle:  ~
             realmd:
                 connection:       realmd
                 mappings:
@@ -110,4 +111,4 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: Valk\MainBundle\Entity\User
+    user_class: Valk\UserBundle\Entity\User

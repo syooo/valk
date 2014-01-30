@@ -1,4 +1,4 @@
-Valk\MainBundle\Entity\UserAccount:
+Valk\UserBundle\Entity\UserAccount:
     type: entity
     table: user_accounts
     id:
@@ -9,7 +9,7 @@ Valk\MainBundle\Entity\UserAccount:
                 strategy: AUTO
     manyToOne:
         user:
-            targetEntity: Valk\MainBundle\Entity\User
+            targetEntity: Valk\UserBundle\Entity\User
             inversedBy: user_accounts
             joinColumn:
                 name: user_id

@@ -1,4 +1,4 @@
-Valk\MainBundle\Entity\User:
+Valk\UserBundle\Entity\User:
     type: entity
     table: users
     id:
@@ -8,5 +8,5 @@ Valk\MainBundle\Entity\User:
                 strategy: AUTO
     oneToMany:
         user_accounts:
-            targetEntity: Valk\MainBundle\Entity\UserAccount
+            targetEntity: Valk\UserBundle\Entity\UserAccount
             mappedBy: user

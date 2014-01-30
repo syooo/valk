@@ -1,6 +1,6 @@
 <?php
 
-namespace Valk\MainBundle\Entity;
+namespace Valk\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 

@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Valk\AccountBundle\ValkAccountBundle(),
             new Valk\ArmoryBundle\ValkArmoryBundle(),
             new Valk\DatabaseBundle\ValkDatabaseBundle(),
+            new Valk\UserBundle\ValkUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
