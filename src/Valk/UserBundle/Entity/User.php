@@ -3,7 +3,6 @@
 namespace Valk\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * User
@@ -16,17 +15,9 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @var \Doctrine\Common\Collections\ArrayCollection
+     * @var array
      */
-    protected $user_accounts;
-
-    public function __construct()
-    {
-        parent::__construct();
-        $this->user_accounts = new ArrayCollection();
-
-    }
-
+    protected $accounts_ids = array();
 
     /**
      * Get id
@@ -36,5 +27,21 @@ class User extends BaseUser
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return array
+     */
+    public function getAccountsIds()
+    {
+        return $this->accounts_ids;
+    }
+
+    /**
+     * @param array $accounts_ids
+     */
+    public function setAccountsIds($accounts_ids)
+    {
+        $this->accounts_ids = $accounts_ids;
     }
 }
