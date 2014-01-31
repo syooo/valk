@@ -1,9 +1,16 @@
 parameters:
-    valk_user.account_adding.class: Valk\UserBundle\EventListener\RegistrationCompletionListener
+    valk_user.registration_completion.class: Valk\UserBundle\EventListener\RegistrationCompletionListener
+    valk_user.registration_confirmation.class: Valk\UserBundle\EventListener\RegistrationConfirmationListener
 
 services:
-    valk_user.account_adding:
-        class: "%valk_user.account_adding.class%"
+    valk_user.registration_completion:
+        class: "%valk_user.registration_completion.class%"
         arguments: [@doctrine.orm.default_entity_manager, @doctrine.orm.realmd_entity_manager, @validator]
+        tags:
+            - { name: kernel.event_subscriber }
+
+    valk_user.registration_confirmation:
+        class: "%valk_user.registration_confirmation.class%"
+        arguments: [@doctrine.orm.realmd_entity_manager]
         tags:
             - { name: kernel.event_subscriber }

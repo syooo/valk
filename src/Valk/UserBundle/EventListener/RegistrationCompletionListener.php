@@ -76,7 +76,9 @@ class RegistrationCompletionListener implements EventSubscriberInterface {
             $account->setUsername($user->getUsername());
             $account->setPassword($user->getPlainPassword());
             $account->setEmail($user->getEmailCanonical());
-            $account->setLocked(true);
+            if (null !== $user->getConfirmationToken()) {
+                $account->setLocked(true);
+            }
             $errors = $this->validator->validate($account);
 
             if(count($errors) == 0) {
@@ -93,6 +95,4 @@ class RegistrationCompletionListener implements EventSubscriberInterface {
             $this->default_em->flush();
         }
     }
-
-
 } 
