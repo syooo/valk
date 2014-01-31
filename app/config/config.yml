@@ -46,7 +46,7 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ValkTalentCalculatorBundle, ValkMainBundle, ValkAccountBundle, ValkUserBundle]
+    bundles:        [ValkMainBundle, ValkAccountBundle, ValkUserBundle]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

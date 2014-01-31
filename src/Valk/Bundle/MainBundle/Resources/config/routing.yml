@@ -1,7 +1,0 @@
-valk_main_homepage:
-    pattern:  /
-    defaults: { _controller: ValkMainBundle:Pages:index }
-
-valk_main_how_to_start:
-    pattern:  /start/
-    defaults: { _controller: ValkMainBundle:Pages:howToStart }

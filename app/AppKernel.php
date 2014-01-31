@@ -16,8 +16,6 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new Valk\Bundle\TalentCalculatorBundle\ValkTalentCalculatorBundle(),
-            //new Valk\Bundle\MainBundle\ValkMainBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Valk\WowBundle\ValkWowBundle(),
             new Valk\MainBundle\ValkMainBundle(),
