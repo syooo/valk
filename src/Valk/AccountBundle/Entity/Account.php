@@ -5,7 +5,9 @@ namespace Valk\AccountBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Account
+ * Class Account
+ * @package Valk\AccountBundle\Entity
+ * @author Artem Korneev <gabriel.violet.dream@gmail.com>
  */
 class Account
 {
@@ -98,6 +100,22 @@ class Account
      * @var string
      */
     private $clientInfo;
+
+    /**
+     *
+     */
+    public function __construct()
+    {
+        $this->activeRealmId = 0;
+        $this->mutetime = 0;
+        $this->locale = 0;
+        $this->gmlevel = 0;
+        $this->lastIp = '0.0.0.0';
+        $this->clientInfo = 'os;version;build';
+        $this->locked = 0;
+        $this->failedLogins = 0;
+        $this->regIp = $_SERVER['REMOTE_ADDR'];
+    }
 
 
     /**
@@ -499,5 +517,21 @@ class Account
     public function getClientInfo()
     {
         return $this->clientInfo;
+    }
+
+    /**
+     * @param $password
+     * @return $this
+     * @throws \Exception
+     */
+    public function setPassword($password) {
+
+        if(empty($this->username) or empty($password)) {
+            throw new \Exception('Username or password is not set');
+        }
+
+        $this->shaPassHash = hash('sha1', strtoupper($this->username) . ':' . strtoupper($password));
+
+        return $this;
     }
 }

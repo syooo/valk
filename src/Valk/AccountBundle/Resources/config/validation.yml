@@ -1,0 +1,11 @@
+Valk\AccountBundle\Entity\Account:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: username
+
+    properties:
+        username:
+            - NotBlank: ~
+        email:
+            - NotBlank: ~
+        shaPassHash:
+            - NotBlank: ~

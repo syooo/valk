@@ -1,6 +1,7 @@
 Valk\AccountBundle\Entity\Account:
     type: entity
     table: account
+    repositoryClass: Valk\AccountBundle\Entity\AccountRepository
     indexes:
         idx_gmlevel:
             columns:

@@ -18,7 +18,6 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Valk\Bundle\TalentCalculatorBundle\ValkTalentCalculatorBundle(),
             //new Valk\Bundle\MainBundle\ValkMainBundle(),
-            //new Valk\Bundle\AccountBundle\ValkAccountBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Valk\WowBundle\ValkWowBundle(),
             new Valk\MainBundle\ValkMainBundle(),

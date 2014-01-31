@@ -1,7 +1,9 @@
 parameters:
-#    valk_user.example.class: Valk\UserBundle\Example
+    valk_user.account_adding.class: Valk\UserBundle\EventListener\AccountAddingListener
 
 services:
-#    valk_user.example:
-#        class: %valk_user.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    valk_user.account_adding:
+        class: "%valk_user.account_adding.class%"
+        arguments: [@doctrine.orm.default_entity_manager, @doctrine.orm.realmd_entity_manager, @validator]
+        tags:
+            - { name: kernel.event_subscriber }
