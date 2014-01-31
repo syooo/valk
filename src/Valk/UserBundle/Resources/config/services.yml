@@ -1,5 +1,5 @@
 parameters:
-    valk_user.account_adding.class: Valk\UserBundle\EventListener\AccountAddingListener
+    valk_user.account_adding.class: Valk\UserBundle\EventListener\RegistrationCompletionListener
 
 services:
     valk_user.account_adding:

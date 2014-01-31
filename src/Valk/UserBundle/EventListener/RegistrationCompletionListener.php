@@ -17,11 +17,11 @@ use Doctrine\Orm\NoResultException;
 use Valk\AccountBundle\Entity\Account;
 
 /**
- * Class AccountAddingListener
+ * Class RegistrationCompletionListener
  * @package Valk\UserBundle\EventListener
  * @author Artem Korneev <gabriel.violet.dream@gmail.com>
  */
-class AccountAddingListener implements EventSubscriberInterface {
+class RegistrationCompletionListener implements EventSubscriberInterface {
 
     /**
      * @var EntityManager $default_em
@@ -56,14 +56,14 @@ class AccountAddingListener implements EventSubscriberInterface {
     public static function getSubscribedEvents()
     {
         return array(
-            FOSUserEvents::REGISTRATION_COMPLETED => 'onUserRegistrationSuccess',
+            FOSUserEvents::REGISTRATION_COMPLETED => 'onUserRegistrationCompleted',
         );
     }
 
     /**
      * @param FilterUserResponseEvent $event
      */
-    public function onUserRegistrationSuccess(FilterUserResponseEvent $event)
+    public function onUserRegistrationCompleted(FilterUserResponseEvent $event)
     {
         /* @var $user  \Valk\UserBundle\Entity\User */
         $user = $event->getUser();
