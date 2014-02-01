@@ -20,3 +20,7 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    coffee:     /usr/bin/coffee
+    node:       /usr/bin/node
+    node_paths: [ /usr/lib/node_modules/ ]

@@ -1,0 +1,176 @@
+{% extends 'ValkMainBundle::layout.html.twig' %}
+
+{% block title %}(1.12.2.6005) {{ 'talent_calculator'|trans }} {{ parent() }}{% endblock %}
+
+{% block breadcrumbs %}
+    {{ breadcrumbs.show({'game': '/', 'talent_calculator': ''}) }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts '@ValkMainBundle/Resources/public/js/core.min.js'
+    '@ValkWowBundle/Resources/public/js/talent-calculator.coffee'
+    '@ValkWowBundle/Resources/public/js/talent-selector.coffee' %}
+    <script src="{{ asset_url }}" type="text/javascript"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block content %}
+    <div class="container home">
+        <h1>{{ 'talent_calculator'|trans }}</h1>
+
+        <div xmlns="http://www.w3.org/1999/xhtml" class="calculator initial" id="calculator">
+            <div class="selector" id="calculator-selector">
+                <a href="#warrior" id="class-1" data-tooltip="#tooltip-class-1"
+                   data-tooltip-options="{&quot;location&quot;:&quot;topCenter&quot;}" data-id="1">
+
+		<span class="icon-frame frame-56 "
+              style="background-image: url(&quot;http://media.blizzard.com/wow/icons/56/class_warrior.jpg&quot;);">
+							<span class="glare"></span>
+		</span>
+                </a>
+
+					<span class="hide" id="tooltip-class-1">
+						<span class="color-c1">Воин</span>
+					</span>
+                <a href="#druid" id="class-11" data-tooltip="#tooltip-class-11"
+                   data-tooltip-options="{&quot;location&quot;:&quot;topCenter&quot;}" data-id="11">
+
+
+
+
+
+		<span class="icon-frame frame-56 "
+              style="background-image: url(&quot;http://media.blizzard.com/wow/icons/56/class_druid.jpg&quot;);">
+							<span class="glare"></span>
+		</span>
+                </a>
+
+					<span class="hide" id="tooltip-class-11">
+						<span class="color-c11">Друид</span>
+					</span>
+                <a href="#priest" id="class-5" data-tooltip="#tooltip-class-5"
+                   data-tooltip-options="{&quot;location&quot;:&quot;topCenter&quot;}" data-id="5">
+
+
+
+
+
+		<span class="icon-frame frame-56 "
+              style="background-image: url(&quot;http://media.blizzard.com/wow/icons/56/class_priest.jpg&quot;);">
+							<span class="glare"></span>
+		</span>
+                </a>
+
+					<span class="hide" id="tooltip-class-5">
+						<span class="color-c5">Жрец</span>
+					</span>
+                <a href="#mage" id="class-8" data-tooltip="#tooltip-class-8"
+                   data-tooltip-options="{&quot;location&quot;:&quot;topCenter&quot;}" data-id="8">
+
+
+
+
+
+		<span class="icon-frame frame-56 "
+              style="background-image: url(&quot;http://media.blizzard.com/wow/icons/56/class_mage.jpg&quot;);">
+							<span class="glare"></span>
+		</span>
+                </a>
+
+					<span class="hide" id="tooltip-class-8">
+						<span class="color-c8">Маг</span>
+					</span>
+                <a href="#hunter" id="class-3" data-tooltip="#tooltip-class-3"
+                   data-tooltip-options="{&quot;location&quot;:&quot;topCenter&quot;}" data-id="3">
+
+
+
+
+
+		<span class="icon-frame frame-56 "
+              style="background-image: url(&quot;http://media.blizzard.com/wow/icons/56/class_hunter.jpg&quot;);">
+							<span class="glare"></span>
+		</span>
+                </a>
+
+					<span class="hide" id="tooltip-class-3">
+						<span class="color-c3">Охотник</span>
+					</span>
+                <a href="#paladin" id="class-2" data-tooltip="#tooltip-class-2"
+                   data-tooltip-options="{&quot;location&quot;:&quot;topCenter&quot;}" data-id="2">
+
+
+
+
+
+		<span class="icon-frame frame-56 "
+              style="background-image: url(&quot;http://media.blizzard.com/wow/icons/56/class_paladin.jpg&quot;);">
+							<span class="glare"></span>
+		</span>
+                </a>
+
+					<span class="hide" id="tooltip-class-2">
+						<span class="color-c2">Паладин</span>
+					</span>
+                <a href="#rogue" id="class-4" data-tooltip="#tooltip-class-4"
+                   data-tooltip-options="{&quot;location&quot;:&quot;topCenter&quot;}" data-id="4">
+
+
+
+
+
+		<span class="icon-frame frame-56 "
+              style="background-image: url(&quot;http://media.blizzard.com/wow/icons/56/class_rogue.jpg&quot;);">
+							<span class="glare"></span>
+		</span>
+                </a>
+
+					<span class="hide" id="tooltip-class-4">
+						<span class="color-c4">Разбойник</span>
+					</span>
+
+                <a href="#warlock" id="class-9" data-tooltip="#tooltip-class-9"
+                   data-tooltip-options="{&quot;location&quot;:&quot;topCenter&quot;}" data-id="9">
+
+
+
+
+
+		<span class="icon-frame frame-56 "
+              style="background-image: url(&quot;http://media.blizzard.com/wow/icons/56/class_warlock.jpg&quot;);">
+							<span class="glare"></span>
+		</span>
+                </a>
+
+					<span class="hide" id="tooltip-class-9">
+						<span class="color-c9">Чернокнижник</span>
+					</span>
+                <a href="#shaman" id="class-7" data-tooltip="#tooltip-class-7"
+                   data-tooltip-options="{&quot;location&quot;:&quot;topCenter&quot;}" data-id="7">
+
+
+
+
+
+		<span class="icon-frame frame-56 "
+              style="background-image: url(&quot;http://media.blizzard.com/wow/icons/56/class_shaman.jpg&quot;);">
+							<span class="glare"></span>
+		</span>
+                </a>
+
+					<span class="hide" id="tooltip-class-7">
+						<span class="color-c7">Шаман</span>
+					</span>
+            </div>
+
+            <div class="container calculator">
+                <div id="select-class" class="select-class modal-brown">
+                    <div class="modal-inner">Выберите класс</div>
+                    <div class="arrow-top"></div>
+                </div>
+                <div class="calculator-body" id="calculators"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

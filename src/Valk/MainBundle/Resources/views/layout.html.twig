@@ -29,6 +29,15 @@
 
     {% endblock %}
 
+    {% block javascripts %}
+
+        {% javascripts '@ValkMainBundle/Resources/public/js/jquery/jquery-2.1.0.js'
+                       '@ValkMainBundle/Resources/public/js/namespace.coffee'
+        %}
+            <script src="{{ asset_url }}" type="text/javascript"></script>
+        {% endjavascripts %}
+    {% endblock %}
+
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Магазин Battle.net" />
     <meta property="og:image" content="https://eu.battle.net/shop/static/images/logos/og-shop.png?v=58-1.2.10" />
@@ -209,7 +218,7 @@
 <a href="{{ attribute(urls, app.request.locale).rules }}" tabindex="100" data-action="Footer - Terms of Use">Server Rules</a>
 <a href="#contacts" tabindex="100">Contacts</a>
 </span>
-                    © Valkyrie WoW, {{ "now"|date('Y') }}
+                    © Valkyrie WoW, 2009-{{ "now"|date('Y') }}
                 </div>
                 <div id="legal">
                 </div>
