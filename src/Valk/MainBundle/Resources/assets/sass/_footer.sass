@@ -1,0 +1,65 @@
+.footer
+  #sitemap
+    border-top: 1px solid rgba(255, 255, 255, 0.07)
+    padding: 30px 0 0 0
+    h3
+      background: 0
+      margin: 0 0 20px 0
+      padding: 0
+      line-height: 20px
+      font-size: 17px
+      text-transform: uppercase
+      border: 0
+      a
+        color: rgba(255, 255, 255, 0.7)
+        &:focus, &:hover
+          color: white
+    .column
+      padding-bottom: 30px
+      ul a
+        margin: 0
+        padding: 0
+        display: inline-block
+        color: rgba(255, 255, 255, 0.3)
+        &:focus, &:hover
+          color: rgba(255, 255, 255, 0.5)
+  ul
+    font-size: 13px
+    list-style: none
+    margin: 0
+    li
+      margin: 0
+      line-height: 25px
+  #change-language
+    padding: 0 20px
+    margin: 0
+    background: 0
+    position: relative
+    &:before
+      content: ""
+      width: 16px
+      height: 16px
+      background: url("../../images/toolkit/icons/sprite-16-blue.png") no-repeat -80px -288px
+      position: absolute
+      left: 0
+      top: 2px
+    &:after
+      content: ""
+      width: 16px
+      height: 16px
+      background: url("../../images/toolkit/icons/sprite-16-white.png") no-repeat -64px -256px
+      position: absolute
+      right: 0
+      top: 2px
+      opacity: .3
+      -webkit-transition: opacity .2s
+      -moz-transition: opacity .2s
+      -o-transition: opacity .2s
+      transition: opacity 0.2s
+    &:hover:after, &:focus:after
+      opacity: 1
+    span
+      padding: 0
+      margin: 0
+      background: 0
+  @import 'lower-footer'

@@ -1,0 +1,53 @@
+.lower-footer
+  #copyright
+    padding: 30px 0 0 0
+    font-size: 11px
+    color: rgba(255, 255, 255, 0.15)
+    border-top: 1px solid rgba(255, 255, 255, 0.07)
+    text-transform: uppercase
+    clear: both
+    .legal-links
+      display: block
+    span
+      margin: 0 10px 0 0
+    a
+      margin: 0 10px 0 0
+      color: rgba(255, 255, 255, 0.3)
+      white-space: nowrap
+      &:focus, &:hover
+        color: white
+  #international
+    background: url("../../images/footer/world-map.png") no-repeat center center
+    padding: 0
+    margin: 30px 0 0 0
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07)
+    .column
+      width: 234px
+      padding: 0 0 30px 0
+      a
+        margin: 0
+        padding: 0
+        &.selected
+          background: 0
+          margin: 0
+          padding: 0
+    h3
+      margin: 0 0 20px 0
+      padding: 0
+      line-height: 20px
+      font-size: 17px
+      text-transform: uppercase
+      color: rgba(255, 255, 255, 0.7)
+  ul
+    font-size: 13px
+    list-style: none
+    margin: 0
+    li
+      margin: 0
+      line-height: 25px
+  #legal
+    padding: 30px 0
+
+@media (min-width: $screen-lg)
+  .lower-footer #copyright
+    font-size: $font-size-base

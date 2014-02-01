@@ -15,15 +15,13 @@
     {% block css %}
 
         {% stylesheets filter='cssrewrite'
-            '@ValkMainBundle/Resources/public/css/common.min.css'
-            '@ValkMainBundle/Resources/public/css/toolkit.min.css'
-            '@ValkMainBundle/Resources/public/css/responsive.min.css'
-            '@ValkMainBundle/Resources/public/css/global.min.css'
-            '@ValkMainBundle/Resources/public/css/product.min.css'
-            '@ValkMainBundle/Resources/public/css/browse.min.css'
-            '@ValkMainBundle/Resources/public/css/bootstrap.css'
-            '@ValkMainBundle/Resources/public/css/valk.css'
          %}
+            <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+
+        {% stylesheets filter="compass"
+            '@ValkMainBundle/Resources/assets/sass/bootstrap.sass'
+        %}
             <link rel="stylesheet" href="{{ asset_url }}"/>
         {% endstylesheets %}
 
@@ -31,7 +29,7 @@
 
     {% block javascripts %}
 
-        {% javascripts '@ValkMainBundle/Resources/public/js/jquery/jquery-2.1.0.js'
+        {% javascripts '@ValkMainBundle/Resources/public/js/zepto/dist/zepto.js'
                        '@ValkMainBundle/Resources/public/js/namespace.coffee'
         %}
             <script src="{{ asset_url }}" type="text/javascript"></script>
@@ -46,7 +44,6 @@
     <meta property="og:url" content="https://eu.battle.net/shop/en-gb/" />
     <meta property="og:locale" content="ru_RU" />
     <link rel="canonical" href="https://eu.battle.net/shop/en-gb/" />
-    <link rel="alternate" href="https://eu.battle.net/shop/de-de/" hreflang="de-DE" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
@@ -56,10 +53,10 @@
 <header class="header">
 <div class="header-primary">
 <div class="container" style="position: relative;">
-<h1 class="heading-3 shop-logo">
+<h1 class="heading-3 text-logo">
     <a href="{{ path('valk_main_homepage') }}">
         Valkyrie WoW
-        <span class="beta-tag">Vanilla 1.12.2</span>
+        <span class="small">Vanilla 1.12.2</span>
     </a>
 </h1>
 
@@ -119,12 +116,10 @@
             {% endblock %}
 
 
-            <div class="region-status dropdown" >
-
+            <div class="server-status pull-right" >
                 <span>set realmlist logon.valkyrie-wow.com</span>
                 <span class="online-players">420 players online</span>
                 <span>rev. 2406</span>
-
             </div>
 
 
@@ -211,7 +206,7 @@
         <div class="lower-footer-wrapper">
             <div class="lower-footer">
                 <div id="copyright">
-                    <a href="{{ attribute(urls, app.request.locale).ru_site }}" tabindex="100" id="change-language">
+                    <a href="{{ attribute(urls, app.request.locale).ru_site }}" tabindex="100" id="change-language" class="pull-right">
                         <span>Русский</span>
                     </a>
 <span class="legal-links">

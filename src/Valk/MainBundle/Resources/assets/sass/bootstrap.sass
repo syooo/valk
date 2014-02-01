@@ -1,0 +1,31 @@
+@import 'variables'
+@import 'heading'
+
+@import "bootstrap-sass/vendor/assets/stylesheets/bootstrap.scss"
+
+@import 'breadcrumbs'
+@import 'service'
+@import 'browse'
+@import 'header_primary'
+@import 'server_status'
+@import 'footer'
+
+// Scaffolding
+a
+  &:hover,
+  &:focus
+    text-decoration: none
+
+.browse-template .main-page-content
+  padding-top: 250px
+
+.navbar-inner
+  min-height: 40px
+  background: rgba(255, 255, 255, 0.05)
+  border: 1px solid rgba(255, 255, 255, 0.07)
+  @include clearfix()
+
+ul, ol
+  padding: 0
+  margin: 0 0 10px 20px
+

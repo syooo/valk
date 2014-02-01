@@ -24,3 +24,4 @@ parameters:
     coffee:     /usr/bin/coffee
     node:       /usr/bin/node
     node_paths: [ /usr/lib/node_modules/ ]
+    compass: /usr/local/bin/compass
